@@ -56,7 +56,7 @@
     "challenge_en": "Modernize without losing the trust built with long-standing clients.",
     "solution_pt": "Um símbolo construído a partir de grids técnicos e um sistema de cores que separa as áreas de atuação.",
     "solution_en": "A symbol built on technical grids and a color system that separates each line of business.",
-    "gallery_style": "colado",
+    "gallery_style": "respiro",
     "gallery": [
       {
         "type": "dupla",
@@ -86,6 +86,7 @@
     "scope_pt": "Identidade visual",
     "scope_en": "Brand identity",
     "credits": "Maria Costa",
+    "cover": "/media/01-1.png",
     "problem_pt": "Floricultura autoral que vendia arranjos sob encomenda, mas era confundida com floriculturas de bairro.",
     "problem_en": "An independent florist selling bespoke arrangements, often mistaken for a corner flower shop.",
     "challenge_pt": "Posicionar a marca como ateliê, com um visual delicado e ao mesmo tempo sofisticado.",
@@ -96,8 +97,8 @@
     "gallery": [
       {
         "type": "dupla",
-        "left": "/media/exemplos/flora-atelie-01.svg",
-        "right": "/media/exemplos/flora-atelie-02.svg"
+        "left": "/media/14.png",
+        "right": "/media/5.png"
       },
       {
         "type": "inteira",
@@ -110,59 +111,60 @@
       },
       {
         "type": "inteira",
-        "media": "/media/exemplos/flora-atelie-04.svg"
+        "media": "/media/5-1.png"
       },
       {
-        "type": "inteira"
+        "type": "inteira",
+        "media": "/media/10300x.png"
       }
     ]
   },
   {
-    "name": "Escola Ritmo",
-    "slug": "escola-ritmo",
-    "year": "2024",
-    "client": "Escola Ritmo",
-    "scope_pt": "Identidade visual, motion",
-    "scope_en": "Visual identity, motion",
-    "credits": "Maria Costa · Motion: [nome]",
-    "cover": "/media/exemplos/escola-ritmo-capa.svg",
+    "name": "Eu Detetive: Desconectar para Investigar",
+    "slug": "EuDetetive",
+    "year": "2025",
+    "client": "Universidade FUMEC",
+    "scope_pt": "Editorial, Ilustração",
+    "scope_en": "Editorial, Illustration",
+    "credits": "Maria Costa ",
+    "cover": "/media/01.jpg",
     "problem_pt": "Escola de dança com alunos de todas as idades, mas comunicação voltada só para o público infantil.",
     "problem_en": "A dance school for all ages whose communication spoke only to children.",
     "challenge_pt": "Criar uma marca com energia de movimento que também falasse com adultos.",
     "challenge_en": "Create a brand with the energy of movement that also speaks to adults.",
     "solution_pt": "Uma tipografia variável que se estica no ritmo da música, aplicada em cartazes, redes e uniformes.",
     "solution_en": "A variable typeface that stretches to the beat, used on posters, social and uniforms.",
-    "gallery_style": "colado",
+    "gallery_style": "respiro",
     "gallery": [
       {
         "type": "dupla",
-        "left": "/media/exemplos/escola-ritmo-01.svg",
-        "right": "/media/exemplos/escola-ritmo-02.svg"
+        "left": "/media/02.jpg",
+        "right": "/media/08.jpg"
       },
       {
         "type": "inteira",
-        "media": "/media/exemplos/escola-ritmo-03.svg"
+        "media": "/media/aaaaaaaaaa.gif"
       },
       {
         "type": "inteira",
-        "media": "/media/exemplos/escola-ritmo-04.svg"
+        "media": "/media/03.jpg"
       },
       {
         "type": "dupla",
-        "left": "/media/exemplos/escola-ritmo-05.svg",
-        "right": "/media/exemplos/escola-ritmo-06.svg"
+        "left": "/media/07.jpg",
+        "right": "/media/11.jpg"
       }
     ]
   },
   {
-    "name": "Margem",
-    "slug": "margem",
-    "year": "2024",
-    "client": "Editora Tinta",
-    "scope_pt": "Projeto editorial",
-    "scope_en": "Editorial design",
+    "name": "Para Meu Eterno Talvez",
+    "slug": "parameueternotalvez",
+    "year": "2026",
+    "client": "Felicia Ferreira",
+    "scope_pt": "Ilustração",
+    "scope_en": "Illustration",
     "credits": "Maria Costa",
-    "cover": "/media/exemplos/margem-capa.svg",
+    "cover": "/media/capa-livromockup.png",
     "problem_pt": "Coletânea de ensaios sobre anotações feitas à margem dos livros, sem uma linguagem visual definida.",
     "problem_en": "A collection of essays about notes written in book margins, with no visual language yet.",
     "challenge_pt": "Fazer o leitor perceber a margem como espaço de leitura, sem atrapalhar o texto principal.",
@@ -173,38 +175,23 @@
     "gallery": [
       {
         "type": "dupla",
-        "left": "/media/exemplos/margem-01.svg",
-        "right": "/media/exemplos/margem-02.svg"
+        "left": "/media/capa-livromockup2.png",
+        "right": "/media/capa-livro.png"
       },
       {
         "type": "inteira",
-        "media": "/media/exemplos/margem-03.svg"
-      },
-      {
-        "type": "frase",
-        "text_pt": "Toda leitura deixa rastro.",
-        "text_en": "Every reading leaves a trace."
-      },
-      {
-        "type": "inteira",
-        "media": "/media/exemplos/margem-04.svg"
-      },
-      {
-        "type": "dupla",
-        "left": "/media/exemplos/margem-05.svg",
-        "right": "/media/exemplos/margem-06.svg"
+        "media": "/media/capateste-1-1.gif"
       }
     ]
   },
   {
-    "name": "Bichos do Quintal",
-    "slug": "bichos-do-quintal",
-    "year": "2023",
-    "client": "Projeto autoral",
-    "scope_pt": "Ilustração",
-    "scope_en": "Illustration",
+    "name": "Bastô",
+    "slug": "basto",
+    "year": "2025",
+    "client": "Bastô Massas",
+    "scope_pt": "Identidade Visual",
+    "scope_en": "Brand Identity",
     "credits": "Maria Costa",
-    "cover": "/media/exemplos/bichos-do-quintal-capa.svg",
     "problem_pt": "Livro infantil sobre os animais que vivem perto de casa, pensado para crianças da cidade.",
     "problem_en": "A children's book about the animals living near home, made for city kids.",
     "challenge_pt": "Ilustrar com precisão suficiente para ensinar, mantendo a leveza de um livro para brincar.",
@@ -214,22 +201,18 @@
     "gallery_style": "colado",
     "gallery": [
       {
-        "type": "dupla",
-        "left": "/media/exemplos/bichos-do-quintal-01.svg",
-        "right": "/media/exemplos/bichos-do-quintal-02.svg"
+        "type": "inteira"
       },
       {
         "type": "inteira",
-        "media": "/media/exemplos/bichos-do-quintal-03.svg"
+        "media": "/media/logo.mp4"
+      },
+      {
+        "type": "inteira"
       },
       {
         "type": "inteira",
-        "media": "/media/exemplos/bichos-do-quintal-04.svg"
-      },
-      {
-        "type": "dupla",
-        "left": "/media/exemplos/bichos-do-quintal-05.svg",
-        "right": "/media/exemplos/bichos-do-quintal-06.svg"
+        "media": "/media/desenhos.mp4"
       }
     ]
   }
