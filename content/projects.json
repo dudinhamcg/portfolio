@@ -1,11 +1,11 @@
 [
   {
-    "name": "Moscatelli",
+    "name": "Estúdio Moscatelli",
     "slug": "Moscatelli",
     "year": "2026",
-    "client": "Elisa Moscatelli",
+    "client": "Estúdio Moscatelli",
     "scope_pt": "Identidade visual",
-    "scope_en": "Visual identity",
+    "scope_en": "Brand identity",
     "credits": "Maria Costa ",
     "cover": "/media/11.png",
     "problem_pt": "Restaurante de cozinha brasileira com ingredientes de pequenos produtores, mas com uma marca genérica que não contava essa origem.",
@@ -42,14 +42,14 @@
     ]
   },
   {
-    "name": "Atlas Engenharia",
-    "slug": "atlas",
-    "year": "2025",
-    "client": "Atlas Engenharia",
-    "scope_pt": "Rebranding",
-    "scope_en": "Rebranding",
+    "name": "Entre Mentes Psicologia",
+    "slug": "EntreMentes",
+    "year": "2026",
+    "client": "Entre Mentes",
+    "scope_pt": "Identidade Visual",
+    "scope_en": "Brand Identity",
     "credits": "Maria Costa",
-    "cover": "/media/exemplos/atlas-capa.svg",
+    "cover": "/media/06-1.png",
     "problem_pt": "Uma empresa de engenharia com 30 anos de mercado e uma marca que parecia ter parado no tempo.",
     "problem_en": "A 30-year-old engineering firm with a brand that looked stuck in the past.",
     "challenge_pt": "Modernizar sem perder a confiança construída com clientes antigos.",
@@ -60,33 +60,32 @@
     "gallery": [
       {
         "type": "dupla",
-        "left": "/media/exemplos/atlas-01.svg",
-        "right": "/media/exemplos/atlas-02.svg"
+        "left": "/media/10.png",
+        "right": "/media/11-1.png"
       },
       {
         "type": "inteira",
-        "media": "/media/exemplos/atlas-03.svg"
+        "media": "/media/07.png"
       },
       {
         "type": "inteira",
-        "media": "/media/exemplos/atlas-04.svg"
+        "media": "/media/08-1.png"
       },
       {
         "type": "dupla",
-        "left": "/media/exemplos/atlas-05.svg",
-        "right": "/media/exemplos/atlas-06.svg"
+        "left": "/media/02-1.png",
+        "right": "/media/09.png"
       }
     ]
   },
   {
-    "name": "Flora Ateliê",
-    "slug": "flora-atelie",
+    "name": "Estúdio Ar",
+    "slug": "estudioar",
     "year": "2025",
-    "client": "Flora Ateliê",
-    "scope_pt": "Identidade visual, papelaria",
-    "scope_en": "Visual identity, stationery",
+    "client": "Estúdio Ar",
+    "scope_pt": "Identidade visual",
+    "scope_en": "Brand identity",
     "credits": "Maria Costa",
-    "cover": "/media/exemplos/flora-atelie-capa.svg",
     "problem_pt": "Floricultura autoral que vendia arranjos sob encomenda, mas era confundida com floriculturas de bairro.",
     "problem_en": "An independent florist selling bespoke arrangements, often mistaken for a corner flower shop.",
     "challenge_pt": "Posicionar a marca como ateliê, com um visual delicado e ao mesmo tempo sofisticado.",
@@ -102,7 +101,7 @@
       },
       {
         "type": "inteira",
-        "media": "/media/exemplos/flora-atelie-03.svg"
+        "media": "/media/cores.mp4"
       },
       {
         "type": "frase",
@@ -114,9 +113,7 @@
         "media": "/media/exemplos/flora-atelie-04.svg"
       },
       {
-        "type": "dupla",
-        "left": "/media/exemplos/flora-atelie-05.svg",
-        "right": "/media/exemplos/flora-atelie-06.svg"
+        "type": "inteira"
       }
     ]
   },
