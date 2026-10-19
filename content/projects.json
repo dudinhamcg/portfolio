@@ -156,11 +156,12 @@
       },
       {
         "type": "inteira",
-        "video_url": "https://youtu.be/MaiHnihn--c?si=skXPuEO-l041v_Oa"
+        "media": "/media/03.jpg"
       },
       {
         "type": "inteira",
-        "media": "/media/03.jpg"
+        "media": "/media/03.jpg",
+        "video_url": "https://youtu.be/QFfJNh_cbLw"
       },
       {
         "type": "dupla",
