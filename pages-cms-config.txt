@@ -47,6 +47,10 @@ content:
         type: file
         options:
           extensions: [jpg, jpeg, png, webp, gif, svg, mp4, webm]
+      - name: cover_url
+        label: Capa — link do YouTube ou Vimeo
+        description: "Opcional. Cole o link de um vídeo do YouTube ou do Vimeo. Se preenchido, ele aparece no lugar do arquivo e toca sozinho, sem som e em loop."
+        type: string
       - name: problem_pt
         label: Problema (português)
         type: text
@@ -90,6 +94,10 @@ content:
                 type: file
                 options:
                   extensions: [jpg, jpeg, png, webp, gif, svg, mp4, webm]
+              - name: video_url
+                label: Ou link do YouTube ou Vimeo
+                description: "Opcional. Cole o link de um vídeo do YouTube ou do Vimeo. Se preenchido, ele aparece no lugar do arquivo e toca sozinho, sem som e em loop."
+                type: string
           - name: dupla
             label: Duas imagens lado a lado
             fields:
@@ -98,11 +106,19 @@ content:
                 type: file
                 options:
                   extensions: [jpg, jpeg, png, webp, gif, svg, mp4, webm]
+              - name: left_url
+                label: Esquerda — ou link do YouTube ou Vimeo
+                description: "Opcional. Cole o link de um vídeo do YouTube ou do Vimeo. Se preenchido, ele aparece no lugar do arquivo e toca sozinho, sem som e em loop."
+                type: string
               - name: right
                 label: Direita
                 type: file
                 options:
                   extensions: [jpg, jpeg, png, webp, gif, svg, mp4, webm]
+              - name: right_url
+                label: Direita — ou link do YouTube ou Vimeo
+                description: "Opcional. Cole o link de um vídeo do YouTube ou do Vimeo. Se preenchido, ele aparece no lugar do arquivo e toca sozinho, sem som e em loop."
+                type: string
           - name: frase
             label: Frase em destaque
             fields:
@@ -134,6 +150,10 @@ content:
         type: string
       - name: year
         label: Ano
+        type: string
+      - name: video_url
+        label: Vídeo do YouTube ou Vimeo (opcional)
+        description: "Cole o link. Se preenchido, o vídeo vira a capa da peça no mosaico e a primeira imagem da galeria."
         type: string
       - name: images
         label: Imagens e vídeos
