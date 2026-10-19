@@ -97,25 +97,25 @@
     "gallery": [
       {
         "type": "dupla",
-        "left": "/media/14.png",
-        "right": "/media/5.png"
+        "left": "/media/magnificreal-architectural-photograph-closeup-of-a-wall-of40828.png",
+        "right": "/media/magnificreal-documentary-photograph-vertical-45-of-a-small40829.png"
       },
       {
         "type": "inteira",
         "media": "/media/cores.mp4"
       },
       {
-        "type": "frase",
-        "text_pt": "Flores que chegam como presente, não como pedido.",
-        "text_en": "Flowers that arrive as a gift, not an order."
-      },
-      {
         "type": "inteira",
-        "media": "/media/5-1.png"
+        "media": "/media/aa.jpg"
       },
       {
         "type": "inteira",
         "media": "/media/10300x.png"
+      },
+      {
+        "type": "dupla",
+        "left": "/media/02-3.png",
+        "right": "/media/03.png"
       }
     ]
   },
