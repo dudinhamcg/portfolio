@@ -489,9 +489,9 @@ header.top .nav{grid-column:2;justify-self:center}
 .boot{padding:48px max(var(--gut),env(safe-area-inset-left,0px));color:var(--muted)}
 
 /* vídeos do YouTube/Vimeo preenchendo o quadro, como uma imagem */
-.art.embed{container-type:size;background:#000}
-.art.embed iframe{position:absolute;top:50%;left:50%;width:max(100cqw,177.78cqh);height:max(100cqh,56.25cqw);transform:translate(-50%,-50%);border:0;pointer-events:none}
-.art.embed.tall iframe{width:max(100cqw,56.25cqh);height:max(100cqh,177.78cqw)}
+.art.embed{background:#000;overflow:hidden}
+.art.embed iframe{position:absolute;top:50%;left:50%;width:1920px;height:1080px;max-width:none;transform:translate(-50%,-50%) scale(.25);transform-origin:50% 50%;border:0;pointer-events:none}
+.art.embed.tall iframe{width:1080px;height:1920px}
 .frame.nat .art.embed{position:relative;aspect-ratio:16/9}
 .frame.nat .art.embed.tall{aspect-ratio:9/16}
 .lb .stage .art.embed{height:auto;width:min(100%,calc((100dvh - 170px) * 16 / 9));aspect-ratio:16/9;display:block}
