@@ -136,19 +136,15 @@
     "scope_pt": "Editorial, Ilustração",
     "scope_en": "Editorial, Illustration",
     "credits": "Maria Costa ",
-    "cover": "/media/capasite.jpg",
-    "problem_pt": "Escola de dança com alunos de todas as idades, mas comunicação voltada só para o público infantil.",
-    "problem_en": "A dance school for all ages whose communication spoke only to children.",
-    "challenge_pt": "Criar uma marca com energia de movimento que também falasse com adultos.",
-    "challenge_en": "Create a brand with the energy of movement that also speaks to adults.",
-    "solution_pt": "Uma tipografia variável que se estica no ritmo da música, aplicada em cartazes, redes e uniformes.",
-    "solution_en": "A variable typeface that stretches to the beat, used on posters, social and uniforms.",
+    "cover": "/media/capasite-1.jpg",
+    "problem_pt": "O livro Eu Detetive: O Enigma do Quadro Roubado, da Editora Moderna, é um livro-jogo em que o leitor escolhe os caminhos da história, mas a edição original não aproveitava isso. A capa não tinha relação com o conteúdo, a tipografia dificultava a leitura para o público jovem e o miolo não tinha ritmo nem identidade. Com a nova lei que restringe o celular nas escolas, ficou a pergunta: como fazer esse livro voltar a chamar a atenção dos adolescentes?",
+    "problem_en": "Eu Detetive: O Enigma do Quadro Roubado, published by Editora Moderna, is a gamebook where readers choose the story’s path, but the original edition didn’t make the most of it. The cover had no connection to the content, the typography made reading harder for young readers, and the layout had no rhythm or identity. With Brazil’s new law restricting phones in schools, one question remained: how could this book win teenagers’ attention again?",
+    "challenge_pt": "Criar uma marca com energia de moTransformar um livro que já existia em uma experiência interativa, que funcionasse como livro e como jogo ao mesmo tempo. Ele precisava prender uma geração acostumada a estímulos visuais sem perder o papel educativo.vimento que também falasse com adultos.",
+    "challenge_en": "To turn an existing book into an interactive experience that works as both a book and a game. It had to hold the attention of a generation used to visual stimuli without losing its educational role.",
+    "solution_pt": "O conceito “Interações Enigmáticas” transformou o livro em um caderno de detetive, em que o leitor escreve o próprio nome e entra na investigação. Ilustrações, um decodificador de mensagens, abas coloridas e um tabuleiro redesenhado com peões e cartas deixam a leitura mais imersiva. Tudo vem numa caixa kraft com cordão, como um arquivo confidencial.",
+    "solution_en": "The concept “Enigmatic Interactions” turned the book into a detective’s notebook, where readers write their own name and join the investigation. Illustrations, a message decoder, color-coded tabs and a redesigned game board with pawns and cards make the reading more immersive. Everything comes in a kraft box tied with a cord, like a confidential case file.",
     "gallery_style": "respiro",
     "gallery": [
-      {
-        "type": "inteira",
-        "video_url": "https://youtu.be/kBh9hzkrNG0?si=p3jK65FmBdNzHVme"
-      },
       {
         "type": "dupla",
         "left": "/media/02.jpg",
@@ -156,11 +152,16 @@
       },
       {
         "type": "inteira",
-        "media": "/media/aaaaaaaaaa-1.gif"
+        "video_url": "https://youtu.be/kBh9hzkrNG0?si=p3jK65FmBdNzHVme"
       },
       {
         "type": "inteira",
         "media": "/media/03.jpg"
+      },
+      {
+        "type": "inteira",
+        "media": "/media/03.jpg",
+        "video_url": "https://youtu.be/MaiHnihn--c?si=skXPuEO-l041v_Oa"
       },
       {
         "type": "dupla",
