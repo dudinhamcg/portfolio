@@ -66,12 +66,25 @@ function embedOf(s) {
   if ((m = u.match(/vimeo\.com\/(?:video\/)?(\d+)/))) return { src: "https://player.vimeo.com/video/" + m[1] + "?background=1&autoplay=1&muted=1&loop=1&dnt=1", tall: false };
   return null;
 }
+/* O YouTube escolhe a qualidade pelo tamanho do player. O player é desenhado
+   grande (1920×1080, como uma tela Full HD) e reduzido para caber no quadro,
+   assim o YouTube entrega a qualidade mais alta que a conexão permitir. */
+const EMB = { w: 1920, h: 1080 };
+const embRO = "ResizeObserver" in window ? new ResizeObserver(es => es.forEach(e => scaleEmbed(e.target))) : null;
+function scaleEmbed(d) {
+  const f = d.querySelector("iframe"); if (!f) return;
+  const tall = d.classList.contains("tall"), W = tall ? EMB.h : EMB.w, H = tall ? EMB.w : EMB.h;
+  const cw = d.clientWidth, ch = d.clientHeight; if (!cw || !ch) return;
+  f.style.transform = "translate(-50%,-50%) scale(" + Math.max(cw / W, ch / H).toFixed(4) + ")";
+}
+function fitEmbed(d) { if (embRO) embRO.observe(d); requestAnimationFrame(() => scaleEmbed(d)); }
 function med(s, alt) {
   const d = h("div", { class: "art" });
   const em = embedOf(s);
   if (em) {
     d.classList.add("embed"); if (em.tall) d.classList.add("tall");
     d.append(h("iframe", { src: em.src, title: alt || "vídeo", loading: "lazy", allow: "autoplay; encrypted-media; picture-in-picture", frameborder: "0", tabindex: "-1", "aria-hidden": "true" }));
+    fitEmbed(d);
     return d;
   }
   const u = fixSrc(s);
