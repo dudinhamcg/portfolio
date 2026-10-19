@@ -86,7 +86,7 @@
     "scope_pt": "Identidade visual",
     "scope_en": "Brand identity",
     "credits": "Maria Costa",
-    "cover": "/media/estudioarmotionweb720p.mp4",
+    "cover": "/media/estudioarmotionweb720p-1.mp4",
     "problem_pt": "O Estúdio Ar estava nascendo em Campos dos Goytacazes e os sócios queriam se diferenciar. A ideia era levar para a marca a brasilidade que já existe nos projetos deles, com uma identidade que combinasse com o trabalho e fizesse parte da história deles.",
     "problem_en": "Estúdio Ar was just starting out in Campos dos Goytacazes, and its partners wanted to stand out. The idea was to bring the Brazilian spirit already present in their projects into the brand, with an identity that matched their work and was part of their own story.",
     "challenge_pt": "Criar uma marca diferenciada, que se destacasse e tivesse personalidade própria. Ao mesmo tempo, ela precisava ter raiz brasileira e de Campos sem perder a cara de um escritório de arquitetura contemporâneo.",
@@ -136,7 +136,7 @@
     "scope_pt": "Editorial, Ilustração",
     "scope_en": "Editorial, Illustration",
     "credits": "Maria Costa ",
-    "cover": "/media/01.jpg",
+    "cover": "/media/capasite.jpg",
     "problem_pt": "Escola de dança com alunos de todas as idades, mas comunicação voltada só para o público infantil.",
     "problem_en": "A dance school for all ages whose communication spoke only to children.",
     "challenge_pt": "Criar uma marca com energia de movimento que também falasse com adultos.",
@@ -146,13 +146,17 @@
     "gallery_style": "respiro",
     "gallery": [
       {
+        "type": "inteira",
+        "video_url": "https://youtu.be/kBh9hzkrNG0?si=p3jK65FmBdNzHVme"
+      },
+      {
         "type": "dupla",
         "left": "/media/02.jpg",
         "right": "/media/08.jpg"
       },
       {
         "type": "inteira",
-        "media": "/media/aaaaaaaaaa.gif"
+        "media": "/media/aaaaaaaaaa-1.gif"
       },
       {
         "type": "inteira",
