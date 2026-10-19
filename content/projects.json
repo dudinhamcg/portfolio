@@ -86,19 +86,19 @@
     "scope_pt": "Identidade visual",
     "scope_en": "Brand identity",
     "credits": "Maria Costa",
-    "cover": "/media/01-1.png",
-    "problem_pt": "Floricultura autoral que vendia arranjos sob encomenda, mas era confundida com floriculturas de bairro.",
-    "problem_en": "An independent florist selling bespoke arrangements, often mistaken for a corner flower shop.",
-    "challenge_pt": "Posicionar a marca como ateliê, com um visual delicado e ao mesmo tempo sofisticado.",
-    "challenge_en": "Position it as an atelier, with a look that is delicate yet refined.",
-    "solution_pt": "Monograma desenhado à mão, papelaria em papel algodão e embalagens que viram parte do presente.",
-    "solution_en": "A hand-drawn monogram, cotton-paper stationery and packaging that becomes part of the gift.",
+    "cover": "/media/estudioarmotionweb720p.mp4",
+    "problem_pt": "O Estúdio Ar estava nascendo em Campos dos Goytacazes e os sócios queriam se diferenciar. A ideia era levar para a marca a brasilidade que já existe nos projetos deles, com uma identidade que combinasse com o trabalho e fizesse parte da história deles.",
+    "problem_en": "Estúdio Ar was just starting out in Campos dos Goytacazes, and its partners wanted to stand out. The idea was to bring the Brazilian spirit already present in their projects into the brand, with an identity that matched their work and was part of their own story.",
+    "challenge_pt": "Criar uma marca diferenciada, que se destacasse e tivesse personalidade própria. Ao mesmo tempo, ela precisava ter raiz brasileira e de Campos sem perder a cara de um escritório de arquitetura contemporâneo.",
+    "challenge_en": "To create a distinctive brand with a personality of its own. At the same time, it needed Brazilian roots and a connection to Campos while still feeling like a contemporary architecture studio.",
+    "solution_pt": "O ponto de partida foram os principais símbolos da arquitetura brasileira, e o cobogó foi o escolhido: um bloco vazado criado em Pernambuco em 1929 para trazer luz e ventilação às casas. O símbolo parte de elementos de Campos, o piso do Museu e o arco da Diocese, e forma um cobogó único. Como um cobogó de verdade, os blocos se encaixam e formam padrões para as aplicações da marca.",
+    "solution_en": "The starting point was the main symbols of Brazilian architecture, and the cobogó was chosen: a perforated block invented in Pernambuco in 1929 to bring light and air into homes. The symbol is built from elements of Campos, the Museum’s floor and the Cathedral’s arch, forming a unique cobogó. Like a real cobogó, the blocks fit together into patterns for the brand’s applications.",
     "gallery_style": "respiro",
     "gallery": [
       {
         "type": "dupla",
-        "left": "/media/magnificreal-architectural-photograph-closeup-of-a-wall-of40828.png",
-        "right": "/media/magnificreal-documentary-photograph-vertical-45-of-a-small40829.png"
+        "left": "/media/magnificsame-photograph-do-not-change-anything-except-the-23981-1.png",
+        "right": "/media/posters-1.mp4"
       },
       {
         "type": "inteira",
@@ -106,16 +106,25 @@
       },
       {
         "type": "inteira",
-        "media": "/media/aa.jpg"
-      },
-      {
-        "type": "inteira",
-        "media": "/media/10300x.png"
+        "media": "/media/04.jpg"
       },
       {
         "type": "dupla",
-        "left": "/media/02-3.png",
-        "right": "/media/03.png"
+        "left": "/media/magnificuse-the-uploaded-photo-only-as-a-guide-for-the-lig23976.png",
+        "right": "/media/ecobag.jpg"
+      },
+      {
+        "type": "inteira",
+        "media": "/media/01teste.jpg"
+      },
+      {
+        "type": "dupla",
+        "left": "/media/placa.jpg",
+        "right": "/media/magnificsame-photograph-remove-the-plant-and-its-pot-compl23977.png"
+      },
+      {
+        "type": "inteira",
+        "media": "/media/bentoestudioar5s.mp4"
       }
     ]
   },
