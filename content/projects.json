@@ -159,7 +159,8 @@
         "media": "/media/03.jpg"
       },
       {
-        "type": "inteira"
+        "type": "inteira",
+        "video_url": "https://youtu.be/QFfJNh_cbLw?si=66Do0OgbndmhHDJg"
       },
       {
         "type": "dupla",
