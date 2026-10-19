@@ -56,8 +56,24 @@ const frame = (cls, ...k) => h("div", { class: "frame " + (cls || "") }, ...k);
 /* imagem ou vídeo (mp4/webm vira vídeo em loop, sem som) */
 const fixSrc = s => s ? String(s).replace(/^\/+/, "") : "";
 const isVid = s => /\.(mp4|webm|mov|m4v)(\?|#|$)/i.test(s || "");
+/* link do YouTube ou Vimeo: toca sozinho, sem som, em loop e sem os controles */
+function embedOf(s) {
+  const u = String(s || "").trim(); let m;
+  if ((m = u.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/))) {
+    const id = m[1];
+    return { src: "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&mute=1&loop=1&playlist=" + id + "&controls=0&playsinline=1&rel=0&modestbranding=1&disablekb=1&iv_load_policy=3&fs=0", tall: /\/shorts\//.test(u) };
+  }
+  if ((m = u.match(/vimeo\.com\/(?:video\/)?(\d+)/))) return { src: "https://player.vimeo.com/video/" + m[1] + "?background=1&autoplay=1&muted=1&loop=1&dnt=1", tall: false };
+  return null;
+}
 function med(s, alt) {
   const d = h("div", { class: "art" });
+  const em = embedOf(s);
+  if (em) {
+    d.classList.add("embed"); if (em.tall) d.classList.add("tall");
+    d.append(h("iframe", { src: em.src, title: alt || "vídeo", loading: "lazy", allow: "autoplay; encrypted-media; picture-in-picture", frameborder: "0", tabindex: "-1", "aria-hidden": "true" }));
+    return d;
+  }
   const u = fixSrc(s);
   if (!u) { d.classList.add("empty"); d.append(h("span", {}, t("empty"))); return d; }
   if (isVid(u)) {
@@ -70,8 +86,9 @@ function med(s, alt) {
 /* ---------- conteúdo ---------- */
 function normP(r, i) {
   const blocks = Array.isArray(r.gallery) ? r.gallery : [];
+  blocks.forEach(b => { b.media = b.video_url || b.media; b.left = b.left_url || b.left; b.right = b.right_url || b.right; });
   const imgs = blocks.flatMap(b => b.type === "inteira" ? [b.media] : b.type === "dupla" ? [b.left, b.right] : []).filter(Boolean);
-  return { raw: r, id: slug(r.slug || r.name) || ("projeto-" + (i + 1)), name: r.name || "", year: r.year || "", client: r.client || "", credits: r.credits || "", gal: r.gallery_style === "colado" ? "colado" : "respiro", cover: r.cover, blocks, imgs };
+  return { raw: r, id: slug(r.slug || r.name) || ("projeto-" + (i + 1)), name: r.name || "", year: r.year || "", client: r.client || "", credits: r.credits || "", gal: r.gallery_style === "colado" ? "colado" : "respiro", cover: r.cover_url || r.cover, blocks, imgs };
 }
 const scope = p => tx(p.raw, "scope");
 const socials = () => (SITE.socials || []).filter(s => s && s.name);
@@ -299,7 +316,7 @@ const load = n => fetch("content/" + n + ".json", { cache: "no-cache" }).then(r 
 Promise.all([load("site"), load("projects"), load("archive")]).then(([s, p, a]) => {
   SITE = s || {}; SITE.name = SITE.name || "Maria Costa";
   P = (Array.isArray(p) ? p : []).map(normP);
-  A = (Array.isArray(a) ? a : []).filter(x => x && x.title);
+  A = (Array.isArray(a) ? a : []).filter(x => x && x.title).map(x => ({ ...x, images: [x.video_url, ...(x.images || [])].filter(Boolean) }));
   motion(); parseHash(); render();
 }).catch(() => {
   document.getElementById("app").innerHTML = '<p class="boot">Não foi possível carregar o conteúdo do site. Se você abriu o arquivo direto do computador, veja no LEIA-ME como testar localmente.</p>';
