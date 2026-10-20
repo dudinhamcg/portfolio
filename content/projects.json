@@ -106,13 +106,18 @@
       },
       {
         "type": "inteira",
-        "media": "/media/cores.mp4",
+        "media": "/media/04.jpg",
         "natural": false
       },
       {
         "type": "inteira",
-        "media": "/media/04.jpg",
+        "media": "/media/cores.mp4",
         "natural": false
+      },
+      {
+        "type": "dupla",
+        "left": "/media/02-5.png",
+        "right": "/media/03-1.png"
       },
       {
         "type": "dupla",
