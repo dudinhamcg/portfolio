@@ -177,6 +177,11 @@
         "type": "dupla",
         "left": "/media/07.jpg",
         "right": "/media/11.jpg"
+      },
+      {
+        "type": "inteira",
+        "media": "/media/testeilus.jpg",
+        "natural": true
       }
     ]
   },
