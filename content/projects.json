@@ -179,6 +179,11 @@
         "right": "/media/11.jpg"
       },
       {
+        "type": "inteira",
+        "media": "/media/04-3.jpg",
+        "natural": false
+      },
+      {
         "type": "dupla",
         "left": "/media/12.jpg",
         "right": "/media/v1-2.mp4"
