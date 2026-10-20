@@ -110,14 +110,14 @@
         "natural": false
       },
       {
+        "type": "dupla",
+        "left": "/media/02-5.png",
+        "right": "/media/5.jpg"
+      },
+      {
         "type": "inteira",
         "media": "/media/cores.mp4",
         "natural": false
-      },
-      {
-        "type": "dupla",
-        "left": "/media/02-5.png",
-        "right": "/media/03-1.png"
       },
       {
         "type": "dupla",
