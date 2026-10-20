@@ -17,6 +17,10 @@
     {
       "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/mariacostag/"
+    },
+    {
+      "name": "WhatsApp",
+      "url": "http://wa.me/5531993366264"
     }
   ],
   "location_pt": "Brasil",
@@ -27,10 +31,10 @@
   "archive_intro_en": "One-off pieces, studies and experiments.",
   "about": {
     "photo": "/media/portfoliocolorido.jpg",
-    "statement_pt": "Designer gráfica focada em identidade visual, com projetos também em editorial e ilustração.",
-    "statement_en": "Graphic designer focused on visual identity, with projects in editorial and illustration too.",
-    "bio_pt": "Acredita que uma boa marca nasce de entender o problema antes de desenhar a solução. Trabalha do conceito ao sistema completo: marca, tipografia, aplicações e diretrizes.\n\nFormada em Design e cursando pós-graduação em [área]. Atende clientes no Brasil e no exterior, em português e inglês.",
-    "bio_en": "She believes a good brand starts with understanding the problem before designing the answer. She works from concept to full system: mark, typography, applications and guidelines.\n\nHolds a degree in Design and is pursuing a postgraduate degree in [field]. Works with clients in Brazil and abroad, in Portuguese and English.",
+    "statement_pt": "Designer gráfica que cria identidades visuais, projetos editoriais, ilustrações e embalagens.",
+    "statement_en": "Graphic designer creating visual identities, editorial projects, illustrations and packaging.",
+    "bio_pt": "Amo criar e experimentar, testar caminhos novos até encontrar o que tem a cara de cada projeto. Cuido de tudo do início ao fim, da primeira ideia até o arquivo pronto para imprimir.\n\nSou formada em Design pela FUMEC e estou cursando a pós-graduação em Tipografia e Design de Tipos no Mackenzie. Trabalho com design desde 2016, com clientes no Brasil e no exterior, em português e inglês.",
+    "bio_en": "I love creating and experimenting, trying new paths until I find what truly fits each project. I take care of everything from start to finish, from the first idea to the print-ready file.\n\nI hold a degree in Design from FUMEC and I’m pursuing a postgraduate degree in Typography and Type Design at Mackenzie. I’ve been working in design since 2016, with clients in Brazil and abroad, in Portuguese and English.",
     "experience": [
       {
         "name": "Designer Freelancer",
@@ -45,7 +49,7 @@
         "period": "2022 - 2023"
       },
       {
-        "name": "Agencia Ouriço",
+        "name": "Agência Ouriço",
         "role_pt": "Designer Junior",
         "role_en": "Junior designer",
         "period": "2023 - 2025"
