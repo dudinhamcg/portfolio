@@ -199,8 +199,8 @@
     "gallery": [
       {
         "type": "dupla",
-        "left": "/media/capa-livromockup2.png",
-        "right": "/media/capa-livro.png"
+        "left": "/media/1.png",
+        "right": "/media/2.png"
       },
       {
         "type": "inteira",
