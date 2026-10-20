@@ -98,6 +98,10 @@ content:
                 label: Ou link do YouTube ou Vimeo
                 description: "Opcional. Cole o link de um vídeo do YouTube ou do Vimeo. Se preenchido, ele aparece no lugar do arquivo e toca sozinho, sem som e em loop."
                 type: string
+              - name: natural
+                label: Manter a altura original
+                description: "Ligado: a imagem aparece inteira, sem corte, com a altura proporcional à largura. Desligado: a imagem é cortada no formato padrão da galeria."
+                type: boolean
           - name: dupla
             label: Duas imagens lado a lado
             fields:
