@@ -496,3 +496,8 @@ header.top .nav{grid-column:2;justify-self:center}
 .frame.nat .art.embed.tall{aspect-ratio:9/16}
 .lb .stage .art.embed{height:auto;width:min(100%,calc((100dvh - 170px) * 16 / 9));aspect-ratio:16/9;display:block}
 .lb .stage .art.embed.tall{width:min(100%,calc((100dvh - 170px) * 9 / 16));aspect-ratio:9/16}
+
+/* galeria: imagem inteira com a altura original (sem corte) */
+.case .gal .blk.natural:not(.dupla) .frame.nat{aspect-ratio:auto}
+.case .gal .blk.natural .frame.nat .art.embed{aspect-ratio:16/9}
+.case .gal .blk.natural .frame.nat .art.embed.tall{aspect-ratio:9/16}
