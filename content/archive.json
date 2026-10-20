@@ -1,45 +1,39 @@
 [
   {
-    "title": "Cartaz Lua",
-    "category_pt": "Cartaz",
-    "category_en": "Poster",
-    "year": "2026",
-    "images": [
-      "/media/exemplos/archive-cartaz-lua-1.svg",
-      "/media/exemplos/archive-cartaz-lua-2.svg",
-      "/media/exemplos/archive-cartaz-lua-3.svg"
-    ]
-  },
-  {
-    "title": "Tipos Fita",
-    "category_pt": "Tipografia",
-    "category_en": "Type",
-    "year": "2026",
-    "images": [
-      "/media/exemplos/archive-tipos-fita-1.svg"
-    ]
-  },
-  {
-    "title": "Caderno 03",
-    "category_pt": "Papelaria",
-    "category_en": "Stationery",
+    "title": "Gatos",
+    "category_pt": "Ilustração",
+    "category_en": "Illustration",
     "year": "2025",
     "images": [
-      "/media/exemplos/archive-caderno-03-1.svg",
-      "/media/exemplos/archive-caderno-03-2.svg",
-      "/media/exemplos/archive-caderno-03-3.svg",
-      "/media/exemplos/archive-caderno-03-4.svg"
+      "/media/img0376.png",
+      "/media/img0377.png"
+    ]
+  },
+  {
+    "title": "Cartaz exposição",
+    "category_pt": "Poster",
+    "category_en": "Poster",
+    "year": "2022",
+    "images": [
+      "/media/poster-exposicao-1.png"
+    ]
+  },
+  {
+    "title": "Coleção Supplat",
+    "category_pt": "Estampas",
+    "category_en": "Pattern",
+    "year": "2022",
+    "images": [
+      "/media/prancheta-16trab.png",
+      "/media/prancheta-14trab.png",
+      "/media/prancheta-12trab.png"
     ]
   },
   {
     "title": "Selo Feira",
     "category_pt": "Lettering",
     "category_en": "Lettering",
-    "year": "2025",
-    "images": [
-      "/media/exemplos/archive-selo-feira-1.svg",
-      "/media/exemplos/archive-selo-feira-2.svg"
-    ]
+    "year": "2025"
   },
   {
     "title": "Capa Ruído",
