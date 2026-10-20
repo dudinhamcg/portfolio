@@ -23,7 +23,8 @@
       },
       {
         "type": "inteira",
-        "media": "/media/12.png"
+        "media": "/media/12.png",
+        "natural": false
       },
       {
         "type": "frase",
@@ -32,7 +33,8 @@
       },
       {
         "type": "inteira",
-        "media": "/media/08.png"
+        "media": "/media/08.png",
+        "natural": false
       },
       {
         "type": "dupla",
@@ -65,11 +67,13 @@
       },
       {
         "type": "inteira",
-        "media": "/media/07.png"
+        "media": "/media/07.png",
+        "natural": false
       },
       {
         "type": "inteira",
-        "media": "/media/08-1.png"
+        "media": "/media/08-1.png",
+        "natural": false
       },
       {
         "type": "dupla",
@@ -102,11 +106,13 @@
       },
       {
         "type": "inteira",
-        "media": "/media/cores.mp4"
+        "media": "/media/cores.mp4",
+        "natural": false
       },
       {
         "type": "inteira",
-        "media": "/media/04.jpg"
+        "media": "/media/04.jpg",
+        "natural": false
       },
       {
         "type": "dupla",
@@ -115,7 +121,8 @@
       },
       {
         "type": "inteira",
-        "media": "/media/01teste.jpg"
+        "media": "/media/01teste.jpg",
+        "natural": false
       },
       {
         "type": "dupla",
@@ -124,7 +131,8 @@
       },
       {
         "type": "inteira",
-        "media": "/media/bentoestudioar5s.mp4"
+        "media": "/media/bentoestudioar5s.mp4",
+        "natural": false
       }
     ]
   },
@@ -152,15 +160,18 @@
       },
       {
         "type": "inteira",
-        "video_url": "https://youtu.be/kBh9hzkrNG0?si=p3jK65FmBdNzHVme"
+        "video_url": "https://youtu.be/kBh9hzkrNG0?si=p3jK65FmBdNzHVme",
+        "natural": false
       },
       {
         "type": "inteira",
-        "media": "/media/03.jpg"
+        "media": "/media/03.jpg",
+        "natural": false
       },
       {
         "type": "inteira",
-        "video_url": "https://youtu.be/QFfJNh_cbLw?si=66Do0OgbndmhHDJg"
+        "video_url": "https://youtu.be/QFfJNh_cbLw?si=66Do0OgbndmhHDJg",
+        "natural": false
       },
       {
         "type": "dupla",
@@ -193,7 +204,13 @@
       },
       {
         "type": "inteira",
-        "media": "/media/capateste-1-1.gif"
+        "video_url": "https://youtu.be/-UzdrCkv2jI?si=Rd8trdm0XTMalHAb",
+        "natural": false
+      },
+      {
+        "type": "inteira",
+        "media": "/media/capa-livro.jpg",
+        "natural": true
       }
     ]
   },
@@ -215,18 +232,22 @@
     "gallery_style": "colado",
     "gallery": [
       {
-        "type": "inteira"
+        "type": "inteira",
+        "natural": false
       },
       {
         "type": "inteira",
-        "media": "/media/logo.mp4"
-      },
-      {
-        "type": "inteira"
+        "media": "/media/logo.mp4",
+        "natural": false
       },
       {
         "type": "inteira",
-        "media": "/media/desenhos.mp4"
+        "natural": false
+      },
+      {
+        "type": "inteira",
+        "media": "/media/desenhos.mp4",
+        "natural": false
       }
     ]
   }
