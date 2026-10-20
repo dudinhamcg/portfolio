@@ -180,6 +180,11 @@
       },
       {
         "type": "inteira",
+        "media": "/media/v1.mp4",
+        "natural": false
+      },
+      {
+        "type": "inteira",
         "media": "/media/testeilus.jpg",
         "natural": true
       }
