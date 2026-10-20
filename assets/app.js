@@ -77,13 +77,25 @@ function scaleEmbed(d) {
   const cw = d.clientWidth, ch = d.clientHeight; if (!cw || !ch) return;
   f.style.transform = "translate(-50%,-50%) scale(" + Math.max(cw / W, ch / H).toFixed(4) + ")";
 }
-function fitEmbed(d) { if (embRO) embRO.observe(d); requestAnimationFrame(() => scaleEmbed(d)); }
+/* Cada vídeo só carrega quando aparece na tela e é desligado quando sai dela.
+   Assim os vídeos não disputam a internet entre si e cada um recebe a
+   qualidade máxima quando está sendo visto. */
+const embIO = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
+  const f = e.target.querySelector("iframe"); if (!f) return;
+  if (e.isIntersecting) { if (f.getAttribute("src") !== f.dataset.src) { f.setAttribute("src", f.dataset.src); scaleEmbed(e.target); } }
+  else if (f.getAttribute("src")) f.removeAttribute("src");
+}), { rootMargin: "150px 0px" }) : null;
+function fitEmbed(d) {
+  if (embRO) embRO.observe(d);
+  if (embIO) embIO.observe(d); else { const f = d.querySelector("iframe"); f.setAttribute("src", f.dataset.src); }
+  requestAnimationFrame(() => scaleEmbed(d));
+}
 function med(s, alt) {
   const d = h("div", { class: "art" });
   const em = embedOf(s);
   if (em) {
     d.classList.add("embed"); if (em.tall) d.classList.add("tall");
-    d.append(h("iframe", { src: em.src, title: alt || "vídeo", loading: "lazy", allow: "autoplay; encrypted-media; picture-in-picture", frameborder: "0", tabindex: "-1", "aria-hidden": "true" }));
+    d.append(h("iframe", { "data-src": em.src, title: alt || "vídeo", allow: "autoplay; encrypted-media; picture-in-picture", frameborder: "0", tabindex: "-1", "aria-hidden": "true" }));
     fitEmbed(d);
     return d;
   }
@@ -212,7 +224,7 @@ function caseP() {
       h("dl", { class: "cspec" }, spec.map(([a, b]) => h("div", {}, h("dt", { class: "lbl" }, a), h("dd", {}, b)))),
       h("div", { class: "cstory" }, story.map(([k]) => h("div", {}, h("h2", { class: "lbl" }, t("ch")[k]), h("p", {}, tx(r, k)))))),
     h("div", { class: "gal " + p.gal }, p.blocks.map(b => {
-      if (b.type === "inteira") return h("div", { class: "blk" }, frame("", med(b.media, p.name)));
+      if (b.type === "inteira") return h("div", { class: "blk" + (b.natural ? " natural" : "") }, frame(b.natural ? "nat" : "", med(b.media, p.name)));
       if (b.type === "dupla") return h("div", { class: "blk dupla" }, frame("", med(b.left, p.name)), frame("", med(b.right, p.name)));
       if (b.type === "frase") return h("div", { class: "blk" }, h("div", { class: "quote" }, h("p", {}, tx(b, "text"))));
       return null;
