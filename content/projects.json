@@ -17,11 +17,6 @@
     "gallery_style": "respiro",
     "gallery": [
       {
-        "type": "inteira",
-        "media": "/media/11-2.png",
-        "natural": false
-      },
-      {
         "type": "dupla",
         "left": "/media/02.png",
         "right": "/media/moscatelli-carrossel-fluido-leve.mp4"
@@ -35,6 +30,11 @@
         "type": "dupla",
         "left": "/media/taco-motion-v13-5s.mp4",
         "right": "/media/04.png"
+      },
+      {
+        "type": "inteira",
+        "media": "/media/11-2.png",
+        "natural": false
       },
       {
         "type": "dupla",
