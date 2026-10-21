@@ -7,19 +7,24 @@
     "scope_pt": "Identidade visual",
     "scope_en": "Brand identity",
     "credits": "Maria Costa ",
-    "cover": "/media/11.png",
-    "problem_pt": "Restaurante de cozinha brasileira com ingredientes de pequenos produtores, mas com uma marca genérica que não contava essa origem.",
-    "problem_en": "A Brazilian restaurant cooking with small-farm ingredients, held back by a generic brand that never told that story.",
-    "challenge_pt": "Traduzir a ideia de origem sem cair nos clichês rústicos do setor, e criar um sistema que funcionasse do cardápio à fachada.",
-    "challenge_en": "Express origin without the category's rustic clichés, in a system that works from menu to storefront.",
-    "solution_pt": "Uma marca tipográfica de desenho firme, paleta tirada dos ingredientes e um sistema de etiquetas que identifica cada produtor.",
-    "solution_en": "A firm typographic mark, a palette drawn from the ingredients and a label system that credits each producer.",
+    "cover_url": "https://youtu.be/WB8mJSURs7k?si=dT6bqcwER4apJXgR",
+    "problem_pt": "O Estúdio Moscatelli estava começando e queria uma marca que trouxesse elegância, confiança e refinamento. A ideia era levar para a identidade o design de interiores brasileiro presente nos projetos, sem cair no óbvio de casas e móveis.",
+    "problem_en": "Estúdio Moscatelli was just starting out and wanted a brand that conveyed elegance, trust and refinement. The idea was to bring the Brazilian interior design found in its projects into the identity, without falling into the obvious imagery of houses and furniture.",
+    "challenge_pt": "Criar uma marca sofisticada e com personalidade própria, que fosse acolhedora e moderna ao mesmo tempo. Ela também precisava ser flexível para acompanhar o crescimento do estúdio, que no futuro pode chegar à arquitetura.",
+    "challenge_en": "To create a sophisticated brand with a personality of its own, both warm and modern. It also had to be flexible enough to grow with the studio, which may one day expand into architecture.",
+    "solution_pt": "O ponto de partida foram os elementos do design de interiores brasileiro, e o piso de taco foi o escolhido, um clássico que traz afeto e memória para a casa. A paleta nasce dos tons das madeiras brasileiras, e a tipografia exclusiva equilibra cantos suaves e terminações firmes. A hierarquia do nome permite ler Estúdio Moscatelli ou Moscatelli Interiores, deixando a marca livre para crescer.",
+    "solution_en": "The starting point was the elements of Brazilian interior design, and the wooden parquet floor, known in Brazil as taco, was chosen: a classic that brings warmth and memory into the home. The palette comes from the tones of Brazilian woods, and the custom typeface balances soft corners with firm endings. The name’s hierarchy allows it to be read as Estúdio Moscatelli or Moscatelli Interiores, leaving the brand free to grow.",
     "gallery_style": "respiro",
     "gallery": [
       {
+        "type": "inteira",
+        "media": "/media/11-2.png",
+        "natural": false
+      },
+      {
         "type": "dupla",
         "left": "/media/02.png",
-        "right": "/media/10-1.png"
+        "right": "/media/moscatelli-carrossel-fluido-leve.mp4"
       },
       {
         "type": "inteira",
@@ -32,9 +37,9 @@
         "right": "/media/04.png"
       },
       {
-        "type": "inteira",
-        "media": "/media/08.png",
-        "natural": false
+        "type": "dupla",
+        "left": "/media/tacos.jpg",
+        "right": "/media/01-2.png"
       },
       {
         "type": "inteira",
