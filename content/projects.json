@@ -113,6 +113,132 @@
     ]
   },
   {
+    "name": "Bastô",
+    "slug": "basto",
+    "year": "2025",
+    "client": "Bastô Massas",
+    "scope_pt": "Identidade Visual, Ilustração",
+    "scope_en": "Brand Identity, Illustration",
+    "credits": "Identidade Visual e Ilustrações: Maria Costa | Idealização e moodboard: Maria Eduarda, Nalu | Projeto desenvolvido dentro da Agência Ouriço.",
+    "cover": "/media/03-2.jpg",
+    "problem_pt": "A Bastô é uma marca de massas artesanais que leva o jeito mineiro para uma receita italiana, com ingredientes pensados para dar esse sabor de Minas. Ela precisava de uma identidade que mostrasse essa mistura e passasse o cuidado do feito à mão.",
+    "problem_en": "Bastô is a handmade pasta brand that brings a Minas Gerais touch to an Italian recipe, with ingredients chosen to give it that local flavor. It needed an identity that showed this blend and conveyed the care of something made by hand.",
+    "challenge_pt": "Criar uma marca que juntasse a tradição italiana e o espírito mineiro sem cair no clichê de nenhum dos dois. Ela precisava ser acolhedora e ter personalidade, com o mesmo carinho de uma comida caseira.",
+    "challenge_en": "To create a brand that brought together Italian tradition and the spirit of Minas Gerais without falling into the clichés of either. It had to feel warm and have personality, with the same care as a home-cooked meal.",
+    "solution_pt": "O B do símbolo foi desenhado a partir da massa, com o centro lembrando um penne e uma curva irregular que traz a maciez da massa feita à mão. A tipografia cursiva exclusiva segue a mesma leveza, e as cores vêm dos ingredientes e de Minas: o laranja do barro e do molho, o verde das montanhas e da rúcula, o amarelo da massa fresca e o bege da farinha e do ovo.",
+    "solution_en": "The B in the symbol was drawn from pasta, with its center recalling a penne and an irregular curve that brings in the softness of handmade dough. The custom script typeface follows the same lightness, and the colors come from the ingredients and from Minas: orange from the clay and the sauce, green from the mountains and arugula, yellow from fresh pasta and beige from flour and egg.",
+    "gallery_style": "respiro",
+    "gallery": [
+      {
+        "type": "dupla",
+        "left": "/media/basto-trend-posters-v3-1.mp4",
+        "right": "/media/07-4.jpg"
+      },
+      {
+        "type": "inteira",
+        "media": "/media/04-5.jpg",
+        "natural": false
+      },
+      {
+        "type": "dupla",
+        "left": "/media/08-3.jpg",
+        "right": "/media/09.jpg"
+      },
+      {
+        "type": "inteira",
+        "media": "/media/logo-1.mp4",
+        "natural": false
+      },
+      {
+        "type": "dupla",
+        "left": "/media/magnificuse-the-uploaded-photo-as-a-guide-for-the-camera-a76292.png",
+        "right": "/media/ecobag.jpg",
+        "right_url": "https://youtube.com/shorts/xAWunnprwVs?si=9zIiap_ywylJCGPH"
+      },
+      {
+        "type": "inteira",
+        "media": "/media/desenhos-1.mp4",
+        "natural": false
+      },
+      {
+        "type": "dupla",
+        "left": "/media/11-1.jpg",
+        "right": "/media/13.jpg"
+      },
+      {
+        "type": "inteira",
+        "media": "/media/05-3.jpg",
+        "natural": false
+      },
+      {
+        "type": "dupla",
+        "left": "/media/06-1.jpg",
+        "right": "/media/12-1.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Eu Detetive: Desconectar para Investigar",
+    "slug": "EuDetetive",
+    "year": "2025",
+    "client": "Universidade FUMEC",
+    "scope_pt": "Editorial, Ilustração",
+    "scope_en": "Editorial, Illustration",
+    "credits": "Maria Costa ",
+    "cover": "/media/capasite-2.jpg",
+    "problem_pt": "O livro Eu Detetive: O Enigma do Quadro Roubado, da Editora Moderna, é um livro-jogo em que o leitor escolhe os caminhos da história, mas a edição original não aproveitava isso. A capa não tinha relação com o conteúdo, a tipografia dificultava a leitura para o público jovem e o miolo não tinha ritmo nem identidade. Com a nova lei que restringe o celular nas escolas, ficou a pergunta: como fazer esse livro voltar a chamar a atenção dos adolescentes?",
+    "problem_en": "Eu Detetive: O Enigma do Quadro Roubado, published by Editora Moderna, is a gamebook where readers choose the story’s path, but the original edition didn’t make the most of it. The cover had no connection to the content, the typography made reading harder for young readers, and the layout had no rhythm or identity. With Brazil’s new law restricting phones in schools, one question remained: how could this book win teenagers’ attention again?",
+    "challenge_pt": "Transformar um livro que já existia em uma experiência interativa, que funcionasse como livro e como jogo ao mesmo tempo. Ele precisava prender uma geração acostumada a estímulos visuais sem perder o papel educativo.",
+    "challenge_en": "To turn an existing book into an interactive experience that works as both a book and a game. It had to hold the attention of a generation used to visual stimuli without losing its educational role.",
+    "solution_pt": "O conceito “Interações Enigmáticas” transformou o livro em um caderno de detetive, em que o leitor escreve o próprio nome e entra na investigação. Ilustrações, um decodificador de mensagens, abas coloridas e um tabuleiro redesenhado com peões e cartas deixam a leitura mais imersiva. Tudo vem numa caixa kraft com cordão, como um arquivo confidencial.",
+    "solution_en": "The concept “Enigmatic Interactions” turned the book into a detective’s notebook, where readers write their own name and join the investigation. Illustrations, a message decoder, color-coded tabs and a redesigned game board with pawns and cards make the reading more immersive. Everything comes in a kraft box tied with a cord, like a confidential case file.",
+    "gallery_style": "respiro",
+    "gallery": [
+      {
+        "type": "dupla",
+        "left": "/media/02.jpg",
+        "right": "/media/08.jpg"
+      },
+      {
+        "type": "inteira",
+        "media": "/media/04.jpg",
+        "video_url": "https://youtu.be/kBh9hzkrNG0?si=p3jK65FmBdNzHVme",
+        "natural": false
+      },
+      {
+        "type": "inteira",
+        "media": "/media/03.jpg",
+        "natural": false
+      },
+      {
+        "type": "inteira",
+        "media": "/media/cores.mp4",
+        "video_url": "https://youtu.be/QFfJNh_cbLw?si=66Do0OgbndmhHDJg",
+        "natural": false
+      },
+      {
+        "type": "dupla",
+        "left": "/media/07.jpg",
+        "right": "/media/11.jpg"
+      },
+      {
+        "type": "inteira",
+        "media": "/media/04-3.jpg",
+        "natural": false
+      },
+      {
+        "type": "dupla",
+        "left": "/media/12.jpg",
+        "right": "/media/v1-2.mp4"
+      },
+      {
+        "type": "inteira",
+        "media": "/media/testeilus.jpg",
+        "natural": true
+      }
+    ]
+  },
+  {
     "name": "Estúdio Ar",
     "slug": "estudioar",
     "year": "2025",
@@ -172,65 +298,6 @@
     ]
   },
   {
-    "name": "Eu Detetive: Desconectar para Investigar",
-    "slug": "EuDetetive",
-    "year": "2025",
-    "client": "Universidade FUMEC",
-    "scope_pt": "Editorial, Ilustração",
-    "scope_en": "Editorial, Illustration",
-    "credits": "Maria Costa ",
-    "cover": "/media/capasite-2.jpg",
-    "problem_pt": "O livro Eu Detetive: O Enigma do Quadro Roubado, da Editora Moderna, é um livro-jogo em que o leitor escolhe os caminhos da história, mas a edição original não aproveitava isso. A capa não tinha relação com o conteúdo, a tipografia dificultava a leitura para o público jovem e o miolo não tinha ritmo nem identidade. Com a nova lei que restringe o celular nas escolas, ficou a pergunta: como fazer esse livro voltar a chamar a atenção dos adolescentes?",
-    "problem_en": "Eu Detetive: O Enigma do Quadro Roubado, published by Editora Moderna, is a gamebook where readers choose the story’s path, but the original edition didn’t make the most of it. The cover had no connection to the content, the typography made reading harder for young readers, and the layout had no rhythm or identity. With Brazil’s new law restricting phones in schools, one question remained: how could this book win teenagers’ attention again?",
-    "challenge_pt": "Transformar um livro que já existia em uma experiência interativa, que funcionasse como livro e como jogo ao mesmo tempo. Ele precisava prender uma geração acostumada a estímulos visuais sem perder o papel educativo.",
-    "challenge_en": "To turn an existing book into an interactive experience that works as both a book and a game. It had to hold the attention of a generation used to visual stimuli without losing its educational role.",
-    "solution_pt": "O conceito “Interações Enigmáticas” transformou o livro em um caderno de detetive, em que o leitor escreve o próprio nome e entra na investigação. Ilustrações, um decodificador de mensagens, abas coloridas e um tabuleiro redesenhado com peões e cartas deixam a leitura mais imersiva. Tudo vem numa caixa kraft com cordão, como um arquivo confidencial.",
-    "solution_en": "The concept “Enigmatic Interactions” turned the book into a detective’s notebook, where readers write their own name and join the investigation. Illustrations, a message decoder, color-coded tabs and a redesigned game board with pawns and cards make the reading more immersive. Everything comes in a kraft box tied with a cord, like a confidential case file.",
-    "gallery_style": "respiro",
-    "gallery": [
-      {
-        "type": "dupla",
-        "left": "/media/02.jpg",
-        "right": "/media/08.jpg"
-      },
-      {
-        "type": "inteira",
-        "video_url": "https://youtu.be/kBh9hzkrNG0?si=p3jK65FmBdNzHVme",
-        "natural": false
-      },
-      {
-        "type": "inteira",
-        "media": "/media/03.jpg",
-        "natural": false
-      },
-      {
-        "type": "inteira",
-        "video_url": "https://youtu.be/QFfJNh_cbLw?si=66Do0OgbndmhHDJg",
-        "natural": false
-      },
-      {
-        "type": "dupla",
-        "left": "/media/07.jpg",
-        "right": "/media/11.jpg"
-      },
-      {
-        "type": "inteira",
-        "media": "/media/04-3.jpg",
-        "natural": false
-      },
-      {
-        "type": "dupla",
-        "left": "/media/12.jpg",
-        "right": "/media/v1-2.mp4"
-      },
-      {
-        "type": "inteira",
-        "media": "/media/testeilus.jpg",
-        "natural": true
-      }
-    ]
-  },
-  {
     "name": "Para Meu Eterno Talvez",
     "slug": "parameueternotalvez",
     "year": "2026",
@@ -254,6 +321,7 @@
       },
       {
         "type": "inteira",
+        "media": "/media/04-5.jpg",
         "video_url": "https://youtu.be/ZctAHik8j1k?si=RMnQ9jTHWys1bQr9",
         "natural": false
       },
@@ -266,70 +334,6 @@
         "type": "inteira",
         "media": "/media/capa-livro.jpg",
         "natural": true
-      }
-    ]
-  },
-  {
-    "name": "Bastô",
-    "slug": "basto",
-    "year": "2025",
-    "client": "Bastô Massas",
-    "scope_pt": "Identidade Visual, Ilustração",
-    "scope_en": "Brand Identity, Illustration",
-    "credits": "Identidade Visual e Ilustrações: Maria Costa | Idealização e moodboard: Maria Eduarda, Nalu | Projeto desenvolvido dentro da Agência Ouriço.",
-    "cover": "/media/03-2.jpg",
-    "problem_pt": "A Bastô é uma marca de massas artesanais que leva o jeito mineiro para uma receita italiana, com ingredientes pensados para dar esse sabor de Minas. Ela precisava de uma identidade que mostrasse essa mistura e passasse o cuidado do feito à mão.",
-    "problem_en": "Bastô is a handmade pasta brand that brings a Minas Gerais touch to an Italian recipe, with ingredients chosen to give it that local flavor. It needed an identity that showed this blend and conveyed the care of something made by hand.",
-    "challenge_pt": "Criar uma marca que juntasse a tradição italiana e o espírito mineiro sem cair no clichê de nenhum dos dois. Ela precisava ser acolhedora e ter personalidade, com o mesmo carinho de uma comida caseira.",
-    "challenge_en": "To create a brand that brought together Italian tradition and the spirit of Minas Gerais without falling into the clichés of either. It had to feel warm and have personality, with the same care as a home-cooked meal.",
-    "solution_pt": "O B do símbolo foi desenhado a partir da massa, com o centro lembrando um penne e uma curva irregular que traz a maciez da massa feita à mão. A tipografia cursiva exclusiva segue a mesma leveza, e as cores vêm dos ingredientes e de Minas: o laranja do barro e do molho, o verde das montanhas e da rúcula, o amarelo da massa fresca e o bege da farinha e do ovo.",
-    "solution_en": "The B in the symbol was drawn from pasta, with its center recalling a penne and an irregular curve that brings in the softness of handmade dough. The custom script typeface follows the same lightness, and the colors come from the ingredients and from Minas: orange from the clay and the sauce, green from the mountains and arugula, yellow from fresh pasta and beige from flour and egg.",
-    "gallery_style": "respiro",
-    "gallery": [
-      {
-        "type": "dupla",
-        "left": "/media/basto-trend-posters-v3-1.mp4",
-        "right": "/media/07-4.jpg"
-      },
-      {
-        "type": "inteira",
-        "media": "/media/04-5.jpg",
-        "natural": false
-      },
-      {
-        "type": "dupla",
-        "left": "/media/08-3.jpg",
-        "right": "/media/09.jpg"
-      },
-      {
-        "type": "inteira",
-        "media": "/media/logo-1.mp4",
-        "natural": false
-      },
-      {
-        "type": "dupla",
-        "left": "/media/magnificuse-the-uploaded-photo-as-a-guide-for-the-camera-a76292.png",
-        "right_url": "https://youtube.com/shorts/xAWunnprwVs?si=9zIiap_ywylJCGPH"
-      },
-      {
-        "type": "inteira",
-        "media": "/media/desenhos-1.mp4",
-        "natural": false
-      },
-      {
-        "type": "dupla",
-        "left": "/media/11-1.jpg",
-        "right": "/media/13.jpg"
-      },
-      {
-        "type": "inteira",
-        "media": "/media/05-3.jpg",
-        "natural": false
-      },
-      {
-        "type": "dupla",
-        "left": "/media/06-1.jpg",
-        "right": "/media/12-1.jpg"
       }
     ]
   }
