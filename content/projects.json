@@ -274,16 +274,16 @@
     "slug": "basto",
     "year": "2025",
     "client": "Bastô Massas",
-    "scope_pt": "Identidade Visual",
-    "scope_en": "Brand Identity",
-    "credits": "Identidade Visual e Ilustrações: Maria Costa",
+    "scope_pt": "Identidade Visual, Ilustração",
+    "scope_en": "Brand Identity, Illustration",
+    "credits": "Identidade Visual e Ilustrações: Maria Costa | Idealização e moodboard: Maria Eduarda, Nalu | Projeto desenvolvido dentro da Agência Ouriço.",
     "cover": "/media/03-2.jpg",
-    "problem_pt": "Livro infantil sobre os animais que vivem perto de casa, pensado para crianças da cidade.",
-    "problem_en": "A children's book about the animals living near home, made for city kids.",
-    "challenge_pt": "Ilustrar com precisão suficiente para ensinar, mantendo a leveza de um livro para brincar.",
-    "challenge_en": "Draw accurately enough to teach while keeping the lightness of a book made for play.",
-    "solution_pt": "Uma série de ilustrações em camadas de cor chapada, com texturas de lápis feitas à mão.",
-    "solution_en": "A series of flat-color layered illustrations with hand-made pencil textures.",
+    "problem_pt": "A Bastô é uma marca de massas artesanais que leva o jeito mineiro para uma receita italiana, com ingredientes pensados para dar esse sabor de Minas. Ela precisava de uma identidade que mostrasse essa mistura e passasse o cuidado do feito à mão.",
+    "problem_en": "Bastô is a handmade pasta brand that brings a Minas Gerais touch to an Italian recipe, with ingredients chosen to give it that local flavor. It needed an identity that showed this blend and conveyed the care of something made by hand.",
+    "challenge_pt": "Criar uma marca que juntasse a tradição italiana e o espírito mineiro sem cair no clichê de nenhum dos dois. Ela precisava ser acolhedora e ter personalidade, com o mesmo carinho de uma comida caseira.",
+    "challenge_en": "To create a brand that brought together Italian tradition and the spirit of Minas Gerais without falling into the clichés of either. It had to feel warm and have personality, with the same care as a home-cooked meal.",
+    "solution_pt": "O B do símbolo foi desenhado a partir da massa, com o centro lembrando um penne e uma curva irregular que traz a maciez da massa feita à mão. A tipografia cursiva exclusiva segue a mesma leveza, e as cores vêm dos ingredientes e de Minas: o laranja do barro e do molho, o verde das montanhas e da rúcula, o amarelo da massa fresca e o bege da farinha e do ovo.",
+    "solution_en": "The B in the symbol was drawn from pasta, with its center recalling a penne and an irregular curve that brings in the softness of handmade dough. The custom script typeface follows the same lightness, and the colors come from the ingredients and from Minas: orange from the clay and the sauce, green from the mountains and arugula, yellow from fresh pasta and beige from flour and egg.",
     "gallery_style": "respiro",
     "gallery": [
       {
@@ -313,13 +313,23 @@
       },
       {
         "type": "inteira",
-        "media": "/media/11-3.png",
+        "media": "/media/desenhos-1.mp4",
         "natural": false
       },
       {
         "type": "dupla",
         "left": "/media/11-1.jpg",
         "right": "/media/13.jpg"
+      },
+      {
+        "type": "inteira",
+        "media": "/media/05-3.jpg",
+        "natural": false
+      },
+      {
+        "type": "dupla",
+        "left": "/media/06-1.jpg",
+        "right": "/media/12-1.jpg"
       }
     ]
   }
