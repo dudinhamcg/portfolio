@@ -276,33 +276,50 @@
     "client": "Bastô Massas",
     "scope_pt": "Identidade Visual",
     "scope_en": "Brand Identity",
-    "credits": "Maria Costa",
-    "cover": "/media/07-2.png",
+    "credits": "Identidade Visual e Ilustrações: Maria Costa",
+    "cover": "/media/03-2.jpg",
     "problem_pt": "Livro infantil sobre os animais que vivem perto de casa, pensado para crianças da cidade.",
     "problem_en": "A children's book about the animals living near home, made for city kids.",
     "challenge_pt": "Ilustrar com precisão suficiente para ensinar, mantendo a leveza de um livro para brincar.",
     "challenge_en": "Draw accurately enough to teach while keeping the lightness of a book made for play.",
     "solution_pt": "Uma série de ilustrações em camadas de cor chapada, com texturas de lápis feitas à mão.",
     "solution_en": "A series of flat-color layered illustrations with hand-made pencil textures.",
-    "gallery_style": "colado",
+    "gallery_style": "respiro",
     "gallery": [
       {
-        "type": "inteira",
-        "natural": false
+        "type": "dupla",
+        "left": "/media/basto-trend-posters-v3-1.mp4",
+        "right": "/media/07-4.jpg"
       },
       {
         "type": "inteira",
-        "media": "/media/logo.mp4",
+        "media": "/media/04-5.jpg",
         "natural": false
       },
       {
-        "type": "inteira",
-        "natural": false
+        "type": "dupla",
+        "left": "/media/08-3.jpg",
+        "right": "/media/09.jpg"
       },
       {
         "type": "inteira",
-        "media": "/media/desenhos.mp4",
+        "media": "/media/logo-1.mp4",
         "natural": false
+      },
+      {
+        "type": "dupla",
+        "left": "/media/magnificuse-the-uploaded-photo-as-a-guide-for-the-camera-a76292.png",
+        "right_url": "https://youtube.com/shorts/xAWunnprwVs?si=9zIiap_ywylJCGPH"
+      },
+      {
+        "type": "inteira",
+        "media": "/media/11-3.png",
+        "natural": false
+      },
+      {
+        "type": "dupla",
+        "left": "/media/11-1.jpg",
+        "right": "/media/13.jpg"
       }
     ]
   }
