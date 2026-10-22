@@ -59,11 +59,8 @@ const isVid = s => /\.(mp4|webm|mov|m4v)(\?|#|$)/i.test(s || "");
 /* link do YouTube ou Vimeo: toca sozinho, sem som, em loop e sem os controles */
 function embedOf(s) {
   const u = String(s || "").trim(); let m;
-  if ((m = u.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/))) {
-    const id = m[1];
-    return { src: "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&mute=1&loop=1&playlist=" + id + "&controls=0&playsinline=1&rel=0&modestbranding=1&disablekb=1&iv_load_policy=3&fs=0", tall: /\/shorts\//.test(u) };
-  }
-  if ((m = u.match(/vimeo\.com\/(?:video\/)?(\d+)/))) return { src: "https://player.vimeo.com/video/" + m[1] + "?background=1&autoplay=1&muted=1&loop=1&dnt=1", tall: false };
+  if ((m = u.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/))) return { kind: "yt", id: m[1], tall: /\/shorts\//.test(u) };
+  if ((m = u.match(/vimeo\.com\/(?:video\/)?(\d+)/))) return { kind: "vimeo", src: "https://player.vimeo.com/video/" + m[1] + "?background=1&autoplay=1&muted=1&loop=1&dnt=1", tall: false };
   return null;
 }
 /* O YouTube escolhe a qualidade pelo tamanho do player. O player é desenhado
@@ -77,25 +74,80 @@ function scaleEmbed(d) {
   const cw = d.clientWidth, ch = d.clientHeight; if (!cw || !ch) return;
   f.style.transform = "translate(-50%,-50%) scale(" + Math.max(cw / W, ch / H).toFixed(4) + ")";
 }
+/* API oficial do YouTube: deixa o site controlar o vídeo sem recarregar o player */
+let ytReady = null;
+function loadYT() {
+  if (ytReady) return ytReady;
+  ytReady = new Promise(res => {
+    if (window.YT && window.YT.Player) return res();
+    const prev = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = () => { if (prev) prev(); res(); };
+    const sc = document.createElement("script"); sc.src = "https://www.youtube.com/iframe_api"; document.head.append(sc);
+  });
+  return ytReady;
+}
+/* Liga o vídeo. Enquanto o YouTube mostra título e logo no começo,
+   a miniatura do vídeo fica por cima. O loop é feito pelo site, voltando
+   ao início um instante antes do fim: assim a tela final e o título
+   do YouTube não aparecem a cada volta. */
+function startEmbed(d) {
+  if (d._on) return; d._on = true;
+  if (d.dataset.kind === "vimeo") {
+    const f = h("iframe", { src: d.dataset.src, allow: "autoplay; encrypted-media; picture-in-picture", frameborder: "0", tabindex: "-1", "aria-hidden": "true" });
+    f.addEventListener("load", () => { d._rt = setTimeout(() => d.classList.add("playing"), 800); });
+    d.append(f); scaleEmbed(d); return;
+  }
+  loadYT().then(() => {
+    if (!d._on) return;
+    const id = d.dataset.id, tall = d.classList.contains("tall");
+    const slot = h("div", { class: "slot" }); d.append(slot);
+    d._p = new YT.Player(slot, {
+      host: "https://www.youtube-nocookie.com", videoId: id, width: tall ? EMB.h : EMB.w, height: tall ? EMB.w : EMB.h,
+      playerVars: { autoplay: 1, mute: 1, controls: 0, playsinline: 1, rel: 0, modestbranding: 1, disablekb: 1, iv_load_policy: 3, fs: 0, cc_load_policy: 0 },
+      events: {
+        onReady: e => {
+          const f = d.querySelector("iframe"); if (f) { f.setAttribute("tabindex", "-1"); f.setAttribute("aria-hidden", "true"); }
+          scaleEmbed(d); e.target.mute(); e.target.playVideo();
+        },
+        onStateChange: e => {
+          if (e.data === 1 && !d.classList.contains("playing") && !d._rt) d._rt = setTimeout(() => d.classList.add("playing"), 2600);
+          if (e.data === 0) { e.target.seekTo(0, true); e.target.playVideo(); }
+        }
+      }
+    });
+    d._loop = setInterval(() => {
+      const pl = d._p; if (!pl || !pl.getDuration) return;
+      const du = pl.getDuration(), ct = pl.getCurrentTime();
+      if (du > 1 && ct > du - 0.4) pl.seekTo(0, true);
+    }, 120);
+  });
+}
+function stopEmbed(d) {
+  d._on = false; clearInterval(d._loop); clearTimeout(d._rt); d._rt = null; d.classList.remove("playing");
+  if (d._p && d._p.destroy) { try { d._p.destroy(); } catch (e) {} }
+  d._p = null; d.querySelectorAll("iframe, .slot").forEach(x => x.remove());
+}
 /* Cada vídeo só carrega quando aparece na tela e é desligado quando sai dela.
    Assim os vídeos não disputam a internet entre si e cada um recebe a
    qualidade máxima quando está sendo visto. */
-const embIO = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
-  const f = e.target.querySelector("iframe"); if (!f) return;
-  if (e.isIntersecting) { if (f.getAttribute("src") !== f.dataset.src) { f.setAttribute("src", f.dataset.src); scaleEmbed(e.target); } }
-  else if (f.getAttribute("src")) f.removeAttribute("src");
-}), { rootMargin: "150px 0px" }) : null;
+const embIO = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? startEmbed(e.target) : stopEmbed(e.target)), { rootMargin: "150px 0px" }) : null;
 function fitEmbed(d) {
   if (embRO) embRO.observe(d);
-  if (embIO) embIO.observe(d); else { const f = d.querySelector("iframe"); f.setAttribute("src", f.dataset.src); }
-  requestAnimationFrame(() => scaleEmbed(d));
+  if (embIO) embIO.observe(d); else startEmbed(d);
 }
 function med(s, alt) {
   const d = h("div", { class: "art" });
   const em = embedOf(s);
   if (em) {
     d.classList.add("embed"); if (em.tall) d.classList.add("tall");
-    d.append(h("iframe", { "data-src": em.src, title: alt || "vídeo", allow: "autoplay; encrypted-media; picture-in-picture", frameborder: "0", tabindex: "-1", "aria-hidden": "true" }));
+    d.dataset.kind = em.kind;
+    if (em.kind === "yt") {
+      d.dataset.id = em.id;
+      const po = h("img", { class: "poster", src: "https://i.ytimg.com/vi/" + em.id + "/maxresdefault.jpg", alt: alt || "", loading: "lazy", decoding: "async" });
+      po.addEventListener("load", () => { if (po.naturalWidth <= 120 && !po.dataset.f) { po.dataset.f = 1; po.src = "https://i.ytimg.com/vi/" + em.id + "/hqdefault.jpg"; } });
+      po.addEventListener("error", () => { if (!po.dataset.f) { po.dataset.f = 1; po.src = "https://i.ytimg.com/vi/" + em.id + "/hqdefault.jpg"; } });
+      d.append(po);
+    } else d.dataset.src = em.src;
     fitEmbed(d);
     return d;
   }
