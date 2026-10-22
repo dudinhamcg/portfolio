@@ -66,34 +66,49 @@
     "scope_pt": "Identidade Visual",
     "scope_en": "Brand Identity",
     "credits": "Maria Costa",
-    "cover": "/media/06-1.png",
-    "problem_pt": "Uma empresa de engenharia com 30 anos de mercado e uma marca que parecia ter parado no tempo.",
-    "problem_en": "A 30-year-old engineering firm with a brand that looked stuck in the past.",
-    "challenge_pt": "Modernizar sem perder a confiança construída com clientes antigos.",
-    "challenge_en": "Modernize without losing the trust built with long-standing clients.",
-    "solution_pt": "Um símbolo construído a partir de grids técnicos e um sistema de cores que separa as áreas de atuação.",
-    "solution_en": "A symbol built on technical grids and a color system that separates each line of business.",
+    "cover": "/media/entre-mentes-motion-v4-1080p.mp4",
+    "problem_pt": "A Entre Mentes é um espaço de psicologia e queria uma marca que transmitisse confiança, segurança e acolhimento. A ideia era falar de saúde mental com delicadeza e mostrar a relação entre quem busca ajuda e quem escuta.",
+    "problem_en": "Entre Mentes is a psychology practice that wanted a brand conveying trust, safety and care. The idea was to talk about mental health with sensitivity and show the relationship between the person seeking help and the person who listens.",
+    "challenge_pt": "Criar uma marca moderna e sofisticada, que fosse sensível sem ser fria e que tivesse personalidade própria. Ela precisava traduzir esse encontro entre duas pessoas de forma simples e marcante.",
+    "challenge_en": "To create a modern, sophisticated brand that felt gentle without being cold and had a personality of its own. It had to express this meeting between two people in a simple, memorable way.",
+    "solution_pt": "Para representar a terapia como uma construção feita a dois, o símbolo une duas mentes em um único cérebro: um lado em traço, o outro em preenchimento, que só se completa quando os dois se juntam. As formas suaves e a paleta de azuis e verdes trazem a calma e a confiança que a marca precisava, com uma linguagem moderna e sem ser fria.",
+    "solution_en": "To show therapy as something built by two people, the symbol brings two minds together in a single brain: one side in outline, the other filled in, complete only when both come together. Soft shapes and a palette of blues and greens bring the calm and trust the brand needed, in a modern language that never feels cold.",
     "gallery_style": "respiro",
     "gallery": [
       {
         "type": "dupla",
-        "left": "/media/10.png",
-        "right": "/media/11-1.png"
+        "left": "/media/03-1.jpg",
+        "right_url": "https://youtube.com/shorts/QmPj6YFX1Zk?si=zxevgLCIsmpT05d5"
       },
       {
         "type": "inteira",
-        "media": "/media/07.png",
-        "natural": false
-      },
-      {
-        "type": "inteira",
-        "media": "/media/08-1.png",
+        "media": "/media/05-2.jpg",
         "natural": false
       },
       {
         "type": "dupla",
-        "left": "/media/02-1.png",
-        "right": "/media/09.png"
+        "left": "/media/01-b.jpg",
+        "right": "/media/08-1.jpg"
+      },
+      {
+        "type": "inteira",
+        "media": "/media/06.jpg",
+        "natural": false
+      },
+      {
+        "type": "dupla",
+        "left": "/media/02-1.jpg",
+        "right": "/media/08-2.jpg"
+      },
+      {
+        "type": "inteira",
+        "media": "/media/04-4.jpg",
+        "natural": false
+      },
+      {
+        "type": "inteira",
+        "video_url": "https://youtu.be/_isPy8zwgAQ?si=3pOIBT_NbLazudb9",
+        "natural": false
       }
     ]
   },
