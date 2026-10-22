@@ -1,32 +1,248 @@
 [
   {
-    "title": "Gatos",
+    "title": "Maute Typography Posters",
+    "category_pt": "Tipografia",
+    "category_en": "Typography",
+    "year": "2026",
+    "images": [
+      "/media/061.jpg",
+      "/media/051.jpg",
+      "/media/081.jpg",
+      "/media/071.jpg"
+    ]
+  },
+  {
+    "title": "Experimental Geometric Posters",
+    "category_pt": "Posters",
+    "category_en": "Posters",
+    "year": "2026",
+    "images": [
+      "/media/pos1.jpg",
+      "/media/pos2.jpg",
+      "/media/pos3.jpg"
+    ]
+  },
+  {
+    "title": "Collages",
+    "category_pt": "Colagem",
+    "category_en": "Collages",
+    "year": "2022",
+    "images": [
+      "/media/dsc05244.jpg",
+      "/media/dsc05250.jpg",
+      "/media/dsc05254.jpg",
+      "/media/dsc05276.jpg",
+      "/media/dsc05212.jpg",
+      "/media/dsc05212-1.jpg",
+      "/media/dsc05284.jpg",
+      "/media/dsc05336.jpg",
+      "/media/dsc05339.jpg",
+      "/media/dsc05340.jpg",
+      "/media/dsc05341.jpg"
+    ]
+  },
+  {
+    "title": "Postal Santorini",
+    "category_pt": "Ilustração",
+    "category_en": "illustration",
+    "year": "2022",
+    "images": [
+      "/media/prancheta-1.png",
+      "/media/prancheta-2.png"
+    ]
+  },
+  {
+    "title": "Greek Vase Pattern",
+    "category_pt": "Ilustração",
+    "category_en": "Illustration",
+    "year": "2023",
+    "images": [
+      "/media/teste.jpg",
+      "/media/teste2.jpg"
+    ]
+  },
+  {
+    "title": "Typography and scanner texture experiments",
+    "category_pt": "Poster",
+    "category_en": "Poster",
+    "year": "2026",
+    "images": [
+      "/media/041.jpg",
+      "/media/011.jpg",
+      "/media/021.jpg",
+      "/media/031.jpg"
+    ]
+  },
+  {
+    "title": "Sun Lettering",
+    "category_pt": "Lettering",
+    "category_en": "Lettering",
+    "year": "2026",
+    "images": [
+      "/media/02b.jpg"
+    ]
+  },
+  {
+    "title": "The 100 Redesign",
+    "category_pt": "Editorial",
+    "category_en": "Editorial",
+    "year": "2023",
+    "images": [
+      "/media/11-2.jpg",
+      "/media/01-2.jpg",
+      "/media/08-4.jpg",
+      "/media/12-2.jpg",
+      "/media/17.jpg",
+      "/media/16.jpg",
+      "/media/07-5.jpg",
+      "/media/18.jpg"
+    ]
+  },
+  {
+    "title": "Illustration experiment for book",
+    "category_pt": "Ilustração",
+    "category_en": "Illustration",
+    "year": "2024",
+    "images": [
+      "/media/ilustracaosemtitulo-6.jpg",
+      "/media/ilustracaosemtitulo-1.jpg",
+      "/media/ilustracaosemtitulo-2.jpg",
+      "/media/ilustracaosemtitulo-3.jpg",
+      "/media/ilustracaosemtitulo-4.jpg",
+      "/media/ilustracaosemtitulo-5.jpg",
+      "/media/ilustracaosemtitulo-7.jpg",
+      "/media/ilustracaosemtitulo-8.jpg",
+      "/media/ilustracaosemtitulo-9.jpg",
+      "/media/ilustracaosemtitulo-10.jpg"
+    ]
+  },
+  {
+    "title": "Scanner Experiment #1",
+    "category_pt": "Textura",
+    "category_en": "Texture",
+    "year": "2025",
+    "images": [
+      "/media/04-4-1.jpg",
+      "/media/05-3-1.jpg",
+      "/media/101.jpg",
+      "/media/111.jpg",
+      "/media/121.jpg",
+      "/media/131.jpg",
+      "/media/141.jpg",
+      "/media/151.jpg",
+      "/media/161.jpg",
+      "/media/171.jpg"
+    ]
+  },
+  {
+    "title": "Book Illustration",
     "category_pt": "Ilustração",
     "category_en": "Illustration",
     "year": "2025",
     "images": [
-      "/media/img0376.png",
-      "/media/img0377.png"
+      "/media/capa.jpg",
+      "/media/ilustracaosemtitulo-6-1.jpg",
+      "/media/ilustracaosemtitulo-1-5.jpg",
+      "/media/ilustracaosemtitulo-2-5.jpg",
+      "/media/ilustracaosemtitulo-3-5.jpg",
+      "/media/ilustracaosemtitulo-4-1.jpg",
+      "/media/ilustracaosemtitulo-5-2.jpg",
+      "/media/ilustracaosemtitulo-6-1-1.jpg",
+      "/media/ilustracaosemtitulo-7-1.jpg",
+      "/media/ilustracaosemtitulo-8-1.jpg",
+      "/media/ilustracaosemtitulo-9-1.jpg",
+      "/media/ilustracaosemtitulo-10-1.jpg",
+      "/media/ilustracaosemtitulo-11-1.jpg",
+      "/media/ilustracaosemtitulo-12-1.jpg"
     ]
   },
   {
-    "title": "Cartaz exposição",
+    "title": "Academic flyer illustration",
+    "category_pt": "Ilustração",
+    "category_en": "Illustration",
+    "year": "2023",
+    "images": [
+      "/media/01-2-1.jpg",
+      "/media/02-2.jpg",
+      "/media/03-2-1.jpg",
+      "/media/04-2-1.jpg"
+    ]
+  },
+  {
+    "title": "Scanner Experiment #2",
+    "category_pt": "Textura",
+    "category_en": "Texture",
+    "year": "2026",
+    "images": [
+      "/media/imag0025.jpg",
+      "/media/imag0026.jpg",
+      "/media/imag0027.jpg",
+      "/media/imag0028.jpg",
+      "/media/imag0029.jpg",
+      "/media/imag0030.jpg",
+      "/media/imag0031.jpg",
+      "/media/imag0031-1.jpg",
+      "/media/imag0032.jpg"
+    ]
+  },
+  {
+    "title": "Booklet Illustration",
+    "category_pt": "Ilustração",
+    "category_en": "Illustration",
+    "year": "2023",
+    "images": [
+      "/media/01-3.jpg",
+      "/media/02-3.jpg",
+      "/media/03-3.jpg",
+      "/media/05-2-1.jpg",
+      "/media/06-2.jpg"
+    ]
+  },
+  {
+    "title": "Pattern Experiment",
+    "category_pt": "Estampa",
+    "category_en": "Pattern",
+    "year": "2022",
+    "images": [
+      "/media/prancheta-1b.jpg",
+      "/media/prancheta-1-copia-2.jpg",
+      "/media/prancheta-1-copia.jpg",
+      "/media/prancheta-1.jpg",
+      "/media/prancheta-2b.jpg",
+      "/media/prancheta-3.jpg",
+      "/media/prancheta-3b.jpg",
+      "/media/prancheta-18trab.jpg",
+      "/media/prancheta-19trab.jpg",
+      "/media/prancheta-20trab.jpg"
+    ]
+  },
+  {
+    "title": "Poster illustratio",
     "category_pt": "Poster",
     "category_en": "Poster",
     "year": "2022",
     "images": [
-      "/media/poster-exposicao-1.png"
+      "/media/poster-exposicao.jpg"
     ]
   },
   {
-    "title": "Coleção Supplat",
-    "category_pt": "Estampas",
-    "category_en": "Pattern",
+    "title": "Illustration Compositions",
+    "category_pt": "Ilustração",
+    "category_en": "Illustration",
     "year": "2022",
     "images": [
-      "/media/prancheta-16trab.png",
-      "/media/prancheta-14trab.png",
-      "/media/prancheta-12trab.png"
+      "/media/dsc05223.jpg",
+      "/media/dsc05224.jpg",
+      "/media/dsc05225.jpg",
+      "/media/dsc05226.jpg",
+      "/media/dsc05227.jpg",
+      "/media/dsc05230.jpg",
+      "/media/dsc05231.jpg",
+      "/media/dsc05236.jpg",
+      "/media/dsc05239.jpg",
+      "/media/dsc05240.jpg",
+      "/media/dsc05241.jpg"
     ]
-  }
+  },
+  {}
 ]
