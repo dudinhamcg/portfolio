@@ -519,3 +519,35 @@ main.case{container-type:inline-size;--gw:min(calc(100cqw - 2 * var(--side)),cal
 #mnav .mlinks button{font-size:clamp(26px,7.4vw,36px);letter-spacing:-.03em;line-height:1.1;padding:14px 0;border-bottom:1px solid var(--line);width:100%}
 #mnav .mlinks{border-top:0}
 #mnav .mlinks button:first-child{border-top:1px solid var(--rule)}
+/* celular: nome no cabeçalho da home, branco sobre a capa com sombra; menu com nome pequeno */
+@media (max-width:760px){
+  header.intro.hv7:not(.plain) .id{opacity:1;visibility:visible;transform:none}
+  header.intro.hv7:not(.scrolled):not(.plain) .id .type{width:min(44vw,200px);transition:width .45s var(--cut)}
+  header.intro.hv7::before{height:200%;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.18) 55%,rgba(0,0,0,0))}
+  .hero.hv2 .hname{display:none}
+}
+#mnav .mid{display:flex;align-items:center}
+#mnav .mid .type{width:96px}
+#mnav .mlinks{border-top:0;padding-top:8px}
+/* abrir projeto: cortina com o nome */
+.wipe{position:fixed;inset:0;z-index:60;background:var(--fg);color:var(--bg);transform:translateY(100%);transition:transform .72s var(--cut);display:flex;align-items:flex-end;pointer-events:all}
+.wipe.in{transform:translateY(0)}
+.wipe.out{transform:translateY(-100%);transition:transform .85s var(--cut)}
+.wipe-in{padding:0 var(--gut) clamp(20px,4vh,40px);display:flex;align-items:baseline;gap:clamp(12px,1.4vw,22px);opacity:0;transform:translateY(24px);transition:opacity .4s .25s,transform .6s .2s var(--cut)}
+.wipe.in .wipe-in{opacity:1;transform:none}
+.wipe.out .wipe-in{opacity:0;transform:translateY(-40px);transition:opacity .3s,transform .6s var(--cut)}
+.wipe .wn{font-size:13px;letter-spacing:.02em;opacity:.6;font-variant-numeric:tabular-nums}
+.wipe b{font-weight:400;font-size:clamp(28px,4.2vw,64px);letter-spacing:-.03em;line-height:1}
+#app .ccover .art{transition:transform 1.3s var(--cut)}
+#app.revealing .ccover .art{transform:scale(1.08)}
+.ccover{overflow:hidden}
+/* celular: archive da home do tamanho da tela, imagens inteiras */
+@media (max-width:760px){
+  .home .harch.hm{display:flex!important;flex-direction:column;height:calc(100svh - var(--hdr));min-height:0;padding-block:20px 20px;gap:20px;align-content:normal}
+  .harch.hm .hal{flex:none}
+  .harch.hm .har{flex:1;min-height:0;display:flex;justify-content:center;gap:10px;max-width:none}
+  .harch.hm .hc1,.harch.hm .hc2{width:var(--cw,45%);flex:none;gap:10px;margin-top:0}
+  .harch.hm .hc2{margin-top:0;align-self:center}
+  .harch.hm .fl{width:100%!important;margin:0!important}
+  .harch.hm .ahd .type{width:min(58vw,300px)}
+}
