@@ -166,6 +166,7 @@ function setAR(d, ar) {
   d._ar = ar; d.style.setProperty("--ar", ar.toFixed(4));
   const f = d.closest(".frame"); if (f) { f.style.setProperty("--ar", ar.toFixed(4)); f._ar = ar; }
   if (d._onar) d._onar(ar);
+  if (d.closest(".home .harch")) { cancelAnimationFrame(fitArch._r); fitArch._r = requestAnimationFrame(fitArch); }
   if (d.closest(".blk")) { cancelAnimationFrame(fitRows._r); fitRows._r = requestAnimationFrame(fitRows); }
 }
 /* cada bloco da galeria cabe inteiro na tela: a largura é limitada pela altura da janela */
@@ -263,31 +264,27 @@ function go(page, proj) {
   if (RM) { doit(); return; }
   app.classList.add("leaving"); setTimeout(doit, 280);
 }
-/* Abrir projeto pela capa da home: a capa cresce até ocupar a tela e vira a capa do projeto. */
-function openCase(p, fromEl) {
-  if (RM || !fromEl) return go("case", p.id);
-  const app = document.getElementById("app");
-  const art = fromEl.querySelector(".art") || fromEl; const r = art.getBoundingClientRect(); const ar = art._ar || r.width / r.height;
-  const src = fromEl.querySelector("img:not(.poster)") || fromEl.querySelector("video") || fromEl.querySelector("img.poster");
-  const fly = h("div", { class: "fly", style: "top:" + r.top + "px;left:" + r.left + "px;width:" + r.width + "px;height:" + r.height + "px" });
-  if (src) {
-    const c = src.tagName === "VIDEO" ? h("video", { src: src.currentSrc || src.src, muted: "", playsinline: "", autoplay: "", loop: "" }) : h("img", { src: src.currentSrc || src.src, alt: "" });
-    if (c.tagName === "VIDEO") { c.muted = true; try { c.currentTime = src.currentTime; } catch (e) {} }
-    fly.append(c);
-  }
-  document.body.append(fly);
-  app.classList.add("flying");
-  const hdr = document.querySelector("header.top"); const top = hdr ? hdr.getBoundingClientRect().bottom : 0;
-  requestAnimationFrame(() => requestAnimationFrame(() => {
-    fly.classList.add("go");
-    Object.assign(fly.style, { top: Math.max(0, top) + "px", left: "0px", width: innerWidth + "px", height: innerWidth / ar + "px" });
-  }));
+/* Abrir projeto: uma cortina sobe com o nome do projeto, a página troca por trás
+   e a cortina continua subindo, revelando a capa do projeto. */
+function openCase(p) {
+  if (RM) return go("case", p.id);
+  if (document.querySelector(".wipe")) return;
+  const k = P.indexOf(p), num = String(k + 1).padStart(2, "0") + " / " + String(P.length).padStart(2, "0");
+  const w = h("div", { class: "wipe", "aria-hidden": "true" }, h("div", { class: "wipe-in" }, h("span", { class: "wn" }, num), h("b", {}, p.name)));
+  document.body.append(w);
+  if (window.lenis) window.lenis.stop();
+  requestAnimationFrame(() => requestAnimationFrame(() => w.classList.add("in")));
   setTimeout(() => {
     S.page = "case"; S.proj = p.id;
     try { history.pushState(null, "", "#p-" + p.id); } catch (e) {}
-    render(); toTop(); app.classList.remove("flying");
-    setTimeout(() => { fly.classList.add("out"); setTimeout(() => fly.remove(), 400); }, 120);
-  }, 760);
+    if (window.lenis) window.lenis.start();
+    render(); toTop();
+    const app = document.getElementById("app"); app.classList.add("revealing");
+    setTimeout(() => {
+      w.classList.add("out"); app.classList.remove("revealing");
+      setTimeout(() => w.remove(), 900);
+    }, 260);
+  }, 720);
 }
 addEventListener("popstate", () => { closeLB(); parseHash(); render(); toTop(); });
 function setLang(l) { S.lang = l; try { localStorage.setItem("mc-lang", l); } catch (e) {} render(); }
@@ -306,8 +303,7 @@ function header() {
 function mobileMenu() {
   const pages = ["index", "archive", "info"];
   return h("div", { id: "mnav", role: "dialog", "aria-modal": "true", "aria-label": "Menu", hidden: "" },
-    h("div", { class: "mtop wrap" }, h("span"), h("button", { class: "mbtn mx", "aria-label": t("close"), on: { click: () => toggleMenu(false) } }, h("i", { class: "burg x", "aria-hidden": "true" }))),
-    h("div", { class: "mname wrap" }, typeSvg("name", SITE.name)),
+    h("div", { class: "mtop wrap" }, h("span", { class: "mid" }, typeSvg("name", SITE.name)), h("button", { class: "mbtn mx", "aria-label": t("close"), on: { click: () => toggleMenu(false) } }, h("i", { class: "burg x", "aria-hidden": "true" }))),
     h("nav", { class: "mlinks wrap" }, pages.map((p, i) => h("button", { "aria-current": (S.page === p || (p === "index" && S.page === "case")) ? "page" : false, on: { click: () => { toggleMenu(false); go(p); } } }, t("nav")[i]))),
     h("div", { class: "mbot wrap" },
       h("a", { href: "mailto:" + SITE.email }, SITE.email),
@@ -349,7 +345,7 @@ function home() {
   HERO.i = 0; HERO.mob = isMob();
   /* capa da home: pode ser diferente no computador e no celular (escolhida no estúdio) */
   const layers = P.map((p, i) => h("div", { class: "hc" + (i === 0 ? " on" : "") }, h("div", { class: "hci" }, med(HERO.mob ? p.homeM : p.homeD, p.name, { manual: true, eager: i < 3 }))));
-  const open = () => { const p = P[HERO.i]; if (p) openCase(p, document.querySelector("#hero .hc.on")); };
+  const open = () => { const p = P[HERO.i]; if (p) openCase(p); };
   const p0 = P[0] || {}, tot = String(P.length).padStart(2, "0");
   const cover = h("button", { class: "hcover", "data-cur": "1", "aria-label": t("see"), on: { click: open } }, layers);
   const step = d => heroTo(Math.max(0, Math.min(P.length - 1, HERO.i + d)));
@@ -415,7 +411,8 @@ function fitV7() {
   } else if (V === "2") {
     /* legenda e setas por cima da capa, com sombra suave; a capa ganha esse espaço.
        No celular a frase e as redes saem do topo (ficam no menu e no rodapé). */
-    ch = H - nh - gap * (mob ? 1.2 : 1.8);
+    /* no celular o nome sobe para o cabeçalho (branco, sobre a capa) e a capa ocupa a tela toda */
+    ch = mob ? H : H - nh - gap * 1.8;
     put(cover, { left: 0, right: 0, top: 0, height: ch });
     put(q(".hshade"), { left: 0, right: 0, top: ch - 200, height: 200 });
     put(proj, { left: pad, right: pad + aW + W * .03, top: ch - rowH - gap * .9, height: rowH });
@@ -458,7 +455,12 @@ function archTeaser() {
   if (!A.length) return null;
   const pick = A.slice().sort(() => Math.random() - .5).slice(0, 4);
   const goA = () => go("archive");
-  const fl = (a, k) => a ? h("button", { class: "fl f" + k, "data-cur": "1", "data-speed": [0.02, -0.015, 0.025, -0.01][k], "aria-label": a.title, on: { click: goA } }, frame("nat", med((a.images || [])[0], a.title))) : null;
+  const mob = isMob();
+  const fl = (a, k) => a ? h("button", { class: "fl f" + k, "data-cur": "1", "data-speed": mob ? 0 : [0.02, -0.015, 0.025, -0.01][k], "aria-label": a.title, on: { click: goA } }, frame("nat", med((a.images || [])[0], a.title))) : null;
+  if (mob) return h("section", { class: "harch hm wrap" },
+    h("div", { class: "hal" }, h("div", { class: "ahw" }, h("button", { class: "ahd", "aria-label": t("archGo"), on: { click: goA } }, typeSvg("archive", "Archive"), circArrow()),
+      h("p", { class: "asub" }, tx(SITE, "archive_intro")))),
+    h("div", { class: "har" }, h("div", { class: "hc1" }, fl(pick[0], 0), fl(pick[3], 3)), h("div", { class: "hc2" }, fl(pick[1], 1), fl(pick[2], 2))));
   return h("section", { class: "harch wrap" },
     h("div", { class: "hal" },
       h("div", { class: "ahw" }, h("button", { class: "ahd", "aria-label": t("archGo"), on: { click: goA } }, typeSvg("archive", "Archive"), circArrow()),
@@ -497,7 +499,7 @@ function caseP() {
       if (b.type === "frase") return h("div", { class: "blk" + hm }, textCell(b, "quote"));
       return null;
     })),
-    nx && nx !== p ? h("button", { class: "nextp", on: { click: () => go("case", nx.id) } },
+    nx && nx !== p ? h("button", { class: "nextp", on: { click: () => openCase(nx) } },
       h("span", { class: "lbl" }, t("next")), h("span", { class: "nx" }, h("b", {}, nx.name), circArrow())) : null);
 }
 
@@ -615,6 +617,28 @@ function setShift() {
   const nav = hd.querySelector(".nav"), idb = hd.querySelector(".id");
   hd.style.setProperty("--shift", Math.max(0, nav.offsetLeft - idb.offsetLeft) + "px");
 }
+/* archive da home: tudo cabe na altura da tela, em qualquer monitor, sem cortar imagens */
+const arOf = f => { const fr = f && f.querySelector(".frame,.art"); return (fr && (fr._ar || parseFloat(fr.style.getPropertyValue("--ar")))) || 1; };
+function fitArch() {
+  const sec = document.querySelector(".home .harch"); if (!sec) return;
+  const hd = document.querySelector("header.top"), hdr = hd ? hd.offsetHeight : 56;
+  const cs = getComputedStyle(sec), padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
+  const har = sec.querySelector(".har"); if (!har) return;
+  if (sec.classList.contains("hm")) {
+    /* celular: duas colunas que crescem até encher a altura que sobra */
+    const g = 10, Wt = sec.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight), Ha = har.clientHeight; if (!Ha) return;
+    let cw = (Wt - g) / 2;
+    [".hc1", ".hc2"].forEach(c => { const el = har.querySelector(c); if (!el) return; const ars = [...el.querySelectorAll(".fl")].map(arOf); if (!ars.length) return;
+      const inv = ars.reduce((t, a) => t + 1 / a, 0); cw = Math.min(cw, (Ha - (ars.length - 1) * g) / inv); });
+    har.style.setProperty("--cw", Math.max(60, cw) + "px"); return;
+  }
+  /* computador: se o mosaico ficar mais alto que a tela, as imagens diminuem na mesma proporção */
+  const avail = innerHeight - hdr - padY;
+  har.style.maxWidth = ""; const hf = sec.querySelector(".hal .fl"); if (hf) hf.style.width = "";
+  const hH = har.offsetHeight; if (hH > avail) har.style.maxWidth = Math.floor(har.offsetWidth * avail / hH) + "px";
+  const hal = sec.querySelector(".hal");
+  if (hf && hal) { const imgH = hf.offsetHeight, rest = hal.offsetHeight - imgH; if (hal.offsetHeight > avail && imgH > 0) hf.style.width = Math.max(80, Math.floor(hf.offsetWidth * (avail - rest) / imgH)) + "px"; }
+}
 function measure() {
   const hero = document.getElementById("hero");
   HERO.el = hero;
@@ -625,7 +649,7 @@ function measure() {
     HERO.top += extra; HERO.h -= extra; }
   setShift();
   fitCover(); fitRows();
-  fitAbout();
+  fitAbout(); fitArch();
 }
 let lastW = innerWidth;
 addEventListener("resize", () => {
@@ -659,11 +683,49 @@ function render() {
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
 }
 
+const TOUCH = matchMedia("(pointer:coarse)").matches;
+const PG = { busy: false, until: 0 };
+const lastStep = () => HERO.top + HERO.step * Math.max(0, P.length - 1);
+const inHero = () => S.page === "index" && !!HERO.el && P.length > 1 && scrollY <= lastStep() + 6 && !document.documentElement.classList.contains("menu-open") && !document.querySelector(".wipe");
+function pageTo(d) {
+  const n = Math.max(0, Math.min(P.length - 1, HERO.i + d)); if (n === HERO.i) return false;
+  PG.busy = true; heroGo(n);
+  const y = HERO.top + HERO.step * n + 2;
+  if (window.lenis) window.lenis.scrollTo(y, { duration: .7, force: true, onComplete: () => { PG.busy = false; } });
+  else window.scrollTo({ top: y, behavior: "smooth" });
+  setTimeout(() => { PG.busy = false; }, 760);
+  return true;
+}
+function heroPaging() {
+  /* computador: cada movimento da roda (ou do trackpad) troca um projeto; o resto do gesto é ignorado */
+  addEventListener("wheel", e => {
+    if (!inHero() || Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+    const d = e.deltaY > 0 ? 1 : -1;
+    if (d > 0 && HERO.i >= P.length - 1 && !PG.busy) return; /* depois do último: segue até o Archive */
+    if (d < 0 && HERO.i === 0 && !PG.busy && scrollY <= HERO.top + 4) return;
+    e.preventDefault(); e.stopImmediatePropagation();
+    const now = performance.now(), quiet = now - (PG.last || 0) > 180; PG.last = now;
+    if (PG.busy || (now < PG.until && !quiet)) { PG.until = now + 160; return; }
+    if (Math.abs(e.deltaY) < 4) return;
+    if (pageTo(d)) PG.until = now + 900;
+  }, { passive: false, capture: true });
+  if (!TOUCH) return;
+  /* celular: cada deslizada troca um projeto, sem pular vários */
+  let y0 = 0, armed = false, held = false, dyL = 0;
+  addEventListener("touchstart", e => { held = false; dyL = 0; y0 = e.touches[0].clientY; armed = inHero(); }, { passive: true });
+  addEventListener("touchmove", e => {
+    if (!armed) return;
+    const dy = y0 - e.touches[0].clientY; dyL = dy;
+    if (!held && dy > 0 && HERO.i >= P.length - 1 && !PG.busy) { armed = false; return; }
+    if (Math.abs(dy) > 4 || PG.busy) { held = true; e.preventDefault(); }
+  }, { passive: false });
+  addEventListener("touchend", () => { if (armed && held && !PG.busy && Math.abs(dyL) > 36) pageTo(dyL > 0 ? 1 : -1); }, { passive: true });
+}
 /* depois do último projeto, a página desliza sozinha até o Archive inteiro (e volta) */
 let lastY = 0, snapping = false;
 function snapArch(y) {
   const dir = y - lastY; lastY = y;
-  if (snapping || !HERO.el || !dir) return;
+  if (snapping || !HERO.el || !dir || TOUCH || PG.busy) return;
   const ar = document.querySelector(".harch"); if (!ar) return;
   const hd = document.querySelector("header.top"), hh = hd ? hd.offsetHeight : 56;
   const endHero = HERO.top + HERO.h - innerHeight, archTop = ar.getBoundingClientRect().top + y - hh;
@@ -678,6 +740,7 @@ function snapArch(y) {
 }
 /* ---------- movimento: rolagem suave, cursor, troca do topo, parallax ---------- */
 function motion() {
+  heroPaging();
   if (!RM && window.Lenis) { try { window.lenis = new Lenis({ duration: 1.15, smoothWheel: true }); } catch (e) { window.lenis = null; } }
   const cur = h("div", { id: "cur", "aria-hidden": "true" }, h("span", {}, t("view"))); let cx = -200, cy = -200, tx2 = -200, ty2 = -200, curOn = false;
   if (HOVER && !RM) {
