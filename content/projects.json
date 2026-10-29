@@ -8,6 +8,8 @@
     "scope_en": "Brand identity",
     "credits": "Maria Costa ",
     "cover_url": "https://youtu.be/BE4E6LwKoYg?si=QvDsYpu2Hjx6RkWh",
+    "home_cover": "/media/taco-motion-3000x1250.mp4",
+    "home_mobile": "/media/taco-motion-v13-5s-2.mp4",
     "problem_pt": "O Estúdio Moscatelli estava começando e queria uma marca que trouxesse elegância, confiança e refinamento. A ideia era levar para a identidade o design de interiores brasileiro presente nos projetos, sem cair no óbvio de casas e móveis.",
     "problem_en": "Estúdio Moscatelli was just starting out and wanted a brand that conveyed elegance, trust and refinement. The idea was to bring the Brazilian interior design found in its projects into the identity, without falling into the obvious imagery of houses and furniture.",
     "challenge_pt": "Criar uma marca sofisticada e com personalidade própria, que fosse acolhedora e moderna ao mesmo tempo. Ela também precisava ser flexível para acompanhar o crescimento do estúdio, que no futuro pode chegar à arquitetura.",
@@ -19,42 +21,50 @@
       {
         "type": "dupla",
         "left": "/media/02.png",
-        "right": "/media/moscatelli-carrossel-fluido-leve.mp4"
+        "right": "/media/moscatelli-carrossel-fluido-leve.mp4",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/magnifica-woman-standing-in-frontupyxbxcwny.png",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "dupla",
         "left": "/media/taco-motion-v13-5s.mp4",
-        "right": "/media/04.png"
+        "right": "/media/04.png",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/11-2.png",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "dupla",
         "left": "/media/tacos.jpg",
-        "right": "/media/01-2.png"
+        "right": "/media/01-2.png",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/07-3.png",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "dupla",
         "left": "/media/06-2.png",
-        "right": "/media/05.png"
+        "right": "/media/05.png",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/magnifican-interior-design-studiodtiufcfxsl.png",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       }
     ]
   },
@@ -78,37 +88,44 @@
       {
         "type": "dupla",
         "left": "/media/03-1.jpg",
-        "right_url": "https://youtube.com/shorts/QmPj6YFX1Zk?si=zxevgLCIsmpT05d5"
+        "right_url": "https://youtube.com/shorts/QmPj6YFX1Zk?si=zxevgLCIsmpT05d5",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/05-2.jpg",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "dupla",
         "left": "/media/01-b.jpg",
-        "right": "/media/07-3.jpg"
+        "right": "/media/07-3.jpg",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/06.jpg",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "dupla",
         "left": "/media/02-1.jpg",
-        "right": "/media/08-2.jpg"
+        "right": "/media/08-2.jpg",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/04-4.jpg",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "video_url": "https://youtu.be/_isPy8zwgAQ?si=3pOIBT_NbLazudb9",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       }
     ]
   },
@@ -132,48 +149,57 @@
       {
         "type": "dupla",
         "left": "/media/basto-trend-posters-v3-1.mp4",
-        "right": "/media/07-4.jpg"
+        "right": "/media/07-4.jpg",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/04-5.jpg",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "dupla",
         "left": "/media/08-3.jpg",
-        "right": "/media/09.jpg"
+        "right": "/media/09.jpg",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/logo-1.mp4",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "dupla",
         "left": "/media/magnificuse-the-uploaded-photo-as-a-guide-for-the-camera-a76292.png",
         "right": "/media/ecobag.jpg",
-        "right_url": "https://youtube.com/shorts/xAWunnprwVs?si=9zIiap_ywylJCGPH"
+        "right_url": "https://youtube.com/shorts/xAWunnprwVs?si=9zIiap_ywylJCGPH",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/desenhos-1.mp4",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "dupla",
         "left": "/media/11-1.jpg",
-        "right": "/media/13.jpg"
+        "right": "/media/13.jpg",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/05-3.jpg",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "dupla",
         "left": "/media/06-1.jpg",
-        "right": "/media/12-1.jpg"
+        "right": "/media/12-1.jpg",
+        "hide_mobile": false
       }
     ]
   },
@@ -197,44 +223,52 @@
       {
         "type": "dupla",
         "left": "/media/02.jpg",
-        "right": "/media/08.jpg"
+        "right": "/media/08.jpg",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/04.jpg",
         "video_url": "https://youtu.be/kBh9hzkrNG0?si=p3jK65FmBdNzHVme",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/03.jpg",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/cores.mp4",
         "video_url": "https://youtu.be/QFfJNh_cbLw?si=66Do0OgbndmhHDJg",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "dupla",
         "left": "/media/07.jpg",
-        "right": "/media/11.jpg"
+        "right": "/media/11.jpg",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/04-3.jpg",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "dupla",
         "left": "/media/12.jpg",
-        "right": "/media/v1-2.mp4"
+        "right": "/media/v1-2.mp4",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/testeilus.jpg",
-        "natural": true
+        "natural": true,
+        "hide_mobile": false
       }
     ]
   },
@@ -258,42 +292,50 @@
       {
         "type": "dupla",
         "left": "/media/magnificsame-photograph-do-not-change-anything-except-the-23981-1.png",
-        "right": "/media/posters-1.mp4"
+        "right": "/media/posters-1.mp4",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/04.jpg",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "dupla",
         "left": "/media/02-5.png",
-        "right": "/media/05-1.jpg"
+        "right": "/media/05-1.jpg",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/cores.mp4",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "dupla",
         "left": "/media/magnificuse-the-uploaded-photo-only-as-a-guide-for-the-lig23976.png",
-        "right": "/media/ecobag.jpg"
+        "right": "/media/ecobag.jpg",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/01teste.jpg",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "dupla",
         "left": "/media/placa.jpg",
-        "right": "/media/magnificsame-photograph-remove-the-plant-and-its-pot-compl23977.png"
+        "right": "/media/magnificsame-photograph-remove-the-plant-and-its-pot-compl23977.png",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/bentoestudioar5s.mp4",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       }
     ]
   },
@@ -317,23 +359,27 @@
       {
         "type": "dupla",
         "left": "/media/capa-livro-1.png",
-        "right": "/media/capa-livro-2.png"
+        "right": "/media/capa-livro-2.png",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/04-5.jpg",
         "video_url": "https://youtu.be/ZctAHik8j1k?si=RMnQ9jTHWys1bQr9",
-        "natural": false
+        "natural": false,
+        "hide_mobile": false
       },
       {
         "type": "dupla",
         "left": "/media/1-1.png",
-        "right": "/media/2.png"
+        "right": "/media/2.png",
+        "hide_mobile": false
       },
       {
         "type": "inteira",
         "media": "/media/capa-livro.jpg",
-        "natural": true
+        "natural": true,
+        "hide_mobile": false
       }
     ]
   }
