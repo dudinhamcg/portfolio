@@ -40,16 +40,37 @@ content:
         type: string
       - name: credits
         label: Créditos
-        type: string
+        description: "Uma linha para cada pessoa. Use dois-pontos para separar a função do nome, ex.: Fotografia: Ana Lima (a função aparece em cinza)."
+        type: text
       - name: cover
         label: Capa (imagem ou vídeo)
-        description: "Aparece na lista da home, no rodapé e no topo da página do projeto. Vídeos .mp4 rodam em loop, sem som."
+        description: "Aparece em tela cheia no topo da página do projeto (e na home, se você não escolher capas próprias para ela abaixo). Vídeos .mp4 rodam em loop, sem som."
         type: file
         options:
           extensions: [jpg, jpeg, png, webp, gif, svg, mp4, webm]
       - name: cover_url
         label: Capa — link do YouTube ou Vimeo
         description: "Opcional. Cole o link de um vídeo do YouTube ou do Vimeo. Se preenchido, ele aparece no lugar do arquivo e toca sozinho, sem som e em loop."
+        type: string
+      - name: home_cover
+        label: Capa da home — computador
+        description: "Opcional. A imagem ou vídeo que aparece no topo da home no computador (formato horizontal). Vazio = usa a Capa do projeto."
+        type: file
+        options:
+          extensions: [jpg, jpeg, png, webp, gif, svg, mp4, webm]
+      - name: home_cover_url
+        label: Capa da home — computador — link do YouTube ou Vimeo
+        description: "Opcional. Se preenchido, aparece no lugar do arquivo acima."
+        type: string
+      - name: home_mobile
+        label: Capa da home — celular
+        description: "Opcional. A imagem ou vídeo que aparece no topo da home no celular. Funciona melhor em pé (ex.: 4:5 ou 9:16). Vazio = usa a capa do computador."
+        type: file
+        options:
+          extensions: [jpg, jpeg, png, webp, gif, svg, mp4, webm]
+      - name: home_mobile_url
+        label: Capa da home — celular — link do YouTube ou Vimeo
+        description: "Opcional. Se preenchido, aparece no lugar do arquivo acima."
         type: string
       - name: problem_pt
         label: Problema (português)
@@ -81,7 +102,7 @@ content:
               label: Colado
       - name: gallery
         label: Galeria
-        description: "Adicione blocos na ordem em que devem aparecer. As duas primeiras imagens também aparecem na lista da home."
+        description: "Adicione blocos na ordem em que devem aparecer."
         type: block
         list: true
         blockKey: type
@@ -101,6 +122,10 @@ content:
               - name: natural
                 label: Manter a altura original
                 description: "Ligado: a imagem aparece inteira, sem corte, com a altura proporcional à largura. Desligado: a imagem é cortada no formato padrão da galeria."
+                type: boolean
+              - name: hide_mobile
+                label: Esconder no celular
+                description: "Ligado: este bloco não aparece no celular."
                 type: boolean
           - name: dupla
             label: Duas imagens lado a lado
@@ -123,6 +148,47 @@ content:
                 label: Direita — ou link do YouTube ou Vimeo
                 description: "Opcional. Cole o link de um vídeo do YouTube ou do Vimeo. Se preenchido, ele aparece no lugar do arquivo e toca sozinho, sem som e em loop."
                 type: string
+              - name: hide_mobile
+                label: Esconder no celular
+                description: "Ligado: este bloco não aparece no celular."
+                type: boolean
+          - name: grade3
+            label: Grade de 3
+            fields:
+              - name: cells
+                label: Espaços (até 3)
+                description: "Cada espaço pode ser imagem, vídeo ou texto. Se tiver imagem ou vídeo, o texto é ignorado."
+                type: object
+                list:
+                  min: 1
+                  max: 3
+                fields:
+                  - name: media
+                    label: Imagem ou vídeo
+                    type: file
+                    options:
+                      extensions: [jpg, jpeg, png, webp, gif, svg, mp4, webm]
+                  - name: video_url
+                    label: Ou link do YouTube ou Vimeo
+                    type: string
+                  - name: text_pt
+                    label: Ou texto (português)
+                    type: text
+                  - name: text_en
+                    label: Texto (inglês)
+                    type: text
+                  - name: bg
+                    label: Cor de fundo do texto
+                    description: "Opcional. Ex.: #5A1E2B"
+                    type: string
+                  - name: fg
+                    label: Cor do texto
+                    description: "Opcional. Ex.: #FFFFFF"
+                    type: string
+              - name: hide_mobile
+                label: Esconder no celular
+                description: "Ligado: este bloco não aparece no celular."
+                type: boolean
           - name: frase
             label: Frase em destaque
             fields:
@@ -132,6 +198,18 @@ content:
               - name: text_en
                 label: Frase (inglês)
                 type: string
+              - name: bg
+                label: Cor de fundo
+                description: "Opcional. Cole o código da cor, ex.: #5A1E2B. Vazio = cinza claro padrão."
+                type: string
+              - name: fg
+                label: Cor do texto
+                description: "Opcional. Ex.: #FFFFFF. Vazio = preto."
+                type: string
+              - name: hide_mobile
+                label: Esconder no celular
+                description: "Ligado: este bloco não aparece no celular."
+                type: boolean
 
   # ---------------------------------------------------------------- ARCHIVE
   - name: archive
@@ -146,12 +224,20 @@ content:
         type: string
         required: true
       - name: category_pt
-        label: Categoria (português)
+        label: Categoria principal (português)
         description: "Os filtros do Archive são criados a partir das categorias. Escreva sempre do mesmo jeito. Ex.: Cartaz"
         type: string
       - name: category_en
-        label: Categoria (inglês)
+        label: Categoria principal (inglês)
         type: string
+      - name: categories
+        label: Outras categorias
+        description: "Opcional. Para peças que entram em mais de um filtro."
+        type: object
+        list: true
+        fields:
+          - { name: name_pt, label: Categoria (português), type: string }
+          - { name: name_en, label: Categoria (inglês), type: string }
       - name: year
         label: Ano
         type: string
@@ -190,7 +276,7 @@ content:
         type: string
       - name: intro_pt
         label: Descrição da home (português)
-        description: "Duas ou três linhas ao lado do seu nome. Também é usada no Google."
+        description: "Frase curta na faixa fina acima do seu nome, no topo da home. Também é usada no Google."
         type: text
       - name: intro_en
         label: Descrição da home (inglês)
