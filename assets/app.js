@@ -565,7 +565,8 @@ function mosaicTeaser(goA) {
     h("div", { class: "ahw" }, h("button", { class: "ahd", "aria-label": t("archGo"), on: { click: goA } }, h("span", { class: "mk" }, typeSvg("archive", "Archive")), circArrow()),
       h("p", { class: "asub" }, tx(SITE, "archive_intro"))));
   const sec = h("section", { class: "harch mock wrap" }, stage);
-  const pool = A.filter(a => isImg((a.images || [])[0])).sort(() => Math.random() - .5).slice(0, 14);
+  const pool = A.filter(a => isImg((a.images || [])[0]));
+  for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]]; } /* embaralha de forma justa */
   const ld = a => new Promise(res => { const i = new Image(); let done = false; const ok = () => { if (done) return; done = true; res({ a, ar: i.naturalWidth ? i.naturalWidth / i.naturalHeight : 0 }); };
     i.onload = ok; i.onerror = ok; setTimeout(ok, 5000); i.src = fixSrc(a.images[0]); });
   Promise.all(pool.map(ld)).then(list => {
@@ -575,7 +576,10 @@ function mosaicTeaser(goA) {
     const order = slots.map((el, k) => { const r = MSLOTS[k]; const ar = (r[2] * stage.clientWidth) / (r[3] * stage.clientHeight || 1); return { el, k, ar }; })
       .sort((x, y) => Math.abs(Math.log(y.ar)) - Math.abs(Math.log(x.ar)));
     order.forEach(o => {
-      let best = null, bd = 1e9; list.forEach(x => { if (used.has(x)) return; const d = Math.abs(Math.log(x.ar / o.ar)); if (d < bd) { bd = d; best = x; } });
+      /* sorteia entre as 3 peças de formato mais parecido (assim todas as posições variam a cada visita) */
+      const cands = list.filter(x => !used.has(x)).map(x => ({ x, d: Math.abs(Math.log(x.ar / o.ar)) })).sort((p, q) => p.d - q.d);
+      const top = cands.filter((c, i) => i < 3 && c.d <= cands[0].d + .45);
+      const best = top.length ? top[Math.floor(Math.random() * top.length)].x : null;
       if (!best) return; used.add(best);
       const a = best.a, src = a.images[0];
       const b = h("button", { class: "fl msf", "data-cur": "1", "aria-label": a.title, on: { click: goA } }, h("img", { src: fixSrc(src), alt: a.title, decoding: "async" }));
