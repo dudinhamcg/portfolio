@@ -308,6 +308,13 @@ content:
       - name: languages_en
         label: Idiomas (inglês)
         type: string
+      - name: ticker1_pt
+        label: Faixa da home (português)
+        description: "Passa entre o Archive e o rodapé. Separe os itens com ponto do meio (·). Ex.: Identidade visual · Editorial · Ilustração · Tipografia · Packaging"
+        type: string
+      - name: ticker1_en
+        label: Faixa da home (inglês)
+        type: string
       - name: archive_intro_pt
         label: Texto do Archive (português)
         type: text
