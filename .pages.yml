@@ -52,6 +52,10 @@ content:
         label: Capa — link do YouTube ou Vimeo
         description: "Opcional. Cole o link de um vídeo do YouTube ou do Vimeo. Se preenchido, ele aparece no lugar do arquivo e toca sozinho, sem som e em loop."
         type: string
+      - name: color
+        label: Cor do projeto
+        description: "Opcional. Cor da tela de transição ao abrir o projeto (código, ex.: #B3213B). Vazio = o site tira uma cor da capa."
+        type: string
       - name: home_cover
         label: Capa da home — computador
         description: "Opcional. A imagem ou vídeo que aparece no topo da home no computador (formato horizontal). Vazio = usa a Capa do projeto."
