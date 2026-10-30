@@ -77,6 +77,8 @@
     "scope_en": "Brand Identity",
     "credits": "Maria Costa",
     "cover": "/media/entre-mentes-motion-v4-1080p.mp4",
+    "home_cover": "/media/entre-mentes-textura-3000x1250.mp4",
+    "home_mobile": "/media/entre-mentes-textura-stories-1080x1920.mp4",
     "problem_pt": "A Entre Mentes é um espaço de psicologia e queria uma marca que transmitisse confiança, segurança e acolhimento. A ideia era falar de saúde mental com delicadeza e mostrar a relação entre quem busca ajuda e quem escuta.",
     "problem_en": "Entre Mentes is a psychology practice that wanted a brand conveying trust, safety and care. The idea was to talk about mental health with sensitivity and show the relationship between the person seeking help and the person who listens.",
     "challenge_pt": "Criar uma marca moderna e sofisticada, que fosse sensível sem ser fria e que tivesse personalidade própria. Ela precisava traduzir esse encontro entre duas pessoas de forma simples e marcante.",
@@ -87,43 +89,49 @@
     "gallery": [
       {
         "type": "dupla",
-        "left": "/media/03-1.jpg",
-        "right_url": "https://youtube.com/shorts/QmPj6YFX1Zk?si=zxevgLCIsmpT05d5",
+        "left": "/media/03-2.png",
+        "right": "/media/entre-mentes-degrade-4x5-v3-1.mp4",
         "hide_mobile": false
       },
       {
         "type": "inteira",
-        "media": "/media/05-2.jpg",
+        "media": "/media/09-1.png",
         "natural": false,
         "hide_mobile": false
       },
       {
         "type": "dupla",
-        "left": "/media/01-b.jpg",
-        "right": "/media/07-3.jpg",
+        "left": "/media/entre-mentes-carrossel-v2-leve.mp4",
+        "right": "/media/10-2.png",
         "hide_mobile": false
       },
       {
         "type": "inteira",
-        "media": "/media/06.jpg",
+        "media": "/media/07-4.png",
         "natural": false,
         "hide_mobile": false
       },
       {
         "type": "dupla",
-        "left": "/media/02-1.jpg",
-        "right": "/media/08-2.jpg",
+        "left": "/media/12-1.png",
+        "right": "/media/08-3.png",
         "hide_mobile": false
       },
       {
         "type": "inteira",
-        "media": "/media/04-4.jpg",
+        "media": "/media/01-4.jpg",
         "natural": false,
         "hide_mobile": false
       },
       {
+        "type": "dupla",
+        "left": "/media/05-1.png",
+        "right": "/media/15.png",
+        "hide_mobile": false
+      },
+      {
         "type": "inteira",
-        "video_url": "https://youtu.be/_isPy8zwgAQ?si=3pOIBT_NbLazudb9",
+        "media": "/media/01-5.jpg",
         "natural": false,
         "hide_mobile": false
       }
