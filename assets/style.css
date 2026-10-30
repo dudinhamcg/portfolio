@@ -880,3 +880,29 @@ header.top .id,header.top .nav{grid-row:1}
 .mstage .ahd{display:flex;align-items:center;gap:clamp(12px,1.4vw,22px)}
 .mstage .ahd .mk{display:block;flex:1;min-width:0}
 .mstage .ahd .mk .type,.mstage .ahd .type{width:100%!important;display:block}
+/* iPhone: esconde o botão de play nativo que aparece quando o vídeo não toca sozinho */
+video::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none}
+video::-webkit-media-controls{display:none!important}
+/* ---------- ajustes no celular ---------- */
+@media (max-width:760px){
+  /* rodapé: e-mail inteiro, sem cortar */
+  .fv-revelado .fside{max-width:none!important;justify-self:stretch!important;width:100%}
+  .fv-revelado .fmail2 .mailrow{flex-wrap:wrap!important;gap:12px}
+  .fv-revelado .fmail2 .mailrow a{font-size:clamp(20px,6.6vw,30px)!important;white-space:normal;word-break:break-all}
+  .fv-revelado .fintro{max-width:none}
+  /* archive da home: duas colunas iguais, centralizadas */
+  .home .harch.hm{height:auto!important}
+  .harch.hm .har{flex:none;justify-content:space-between;gap:10px}
+  .harch.hm .hc1,.harch.hm .hc2{width:calc(50% - 5px)!important}
+  /* capa da home: arrastar de lado não rola a página */
+  #hero .hcover,#hero .hshade,#hero .hproj,#hero .harrs{touch-action:pan-y}
+  /* sobre: mais margem e espaçamento mais distribuído */
+  .about.wrap{padding-inline:24px}
+  .about .txt{gap:36px}
+  .about .bio{gap:18px;line-height:1.6}
+  .facts{margin-top:8px}
+  .facts>*{padding:28px 0 32px!important}
+  .facts h3{margin-bottom:18px}
+  .facts ul{gap:22px}
+  .facts li span{margin-top:3px}
+}
