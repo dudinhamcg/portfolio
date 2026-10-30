@@ -201,8 +201,11 @@ function med(s, alt, opt) {
   const u = fixSrc(s);
   if (!u) { d.classList.add("empty"); d.append(h("span", {}, t("empty"))); return d; }
   if (isVid(u)) {
-    const v = h("video", { class: "im", src: u, muted: "", loop: "", playsinline: "", preload: "metadata", "aria-hidden": "true" });
-    v.muted = true; d.append(v); v.addEventListener("loadeddata", () => v.classList.add("ld"));
+    /* "#t=0.001" faz o iPhone mostrar o primeiro quadro mesmo quando não deixa o vídeo tocar sozinho (modo de pouca energia) */
+    const v = h("video", { class: "im", src: u + (u.includes("#") ? "" : "#t=0.001"), muted: "", loop: "", playsinline: "", "webkit-playsinline": "", preload: "metadata", "aria-hidden": "true" });
+    v.muted = true; d.append(v);
+    const show = () => v.classList.add("ld");
+    v.addEventListener("loadeddata", show); v.addEventListener("loadedmetadata", show); setTimeout(show, 1500);
     v.addEventListener("loadedmetadata", () => setAR(d, v.videoWidth / v.videoHeight));
     if (!opt.manual) watch(v);
   } else {
@@ -215,8 +218,11 @@ function med(s, alt, opt) {
 function playArt(a) {
   if (!a) return;
   if (a.classList.contains("embed")) playEmbed(a);
-  const v = a.querySelector("video"); if (v) { v.preload = "auto"; const pr = v.play(); if (pr && pr.catch) pr.catch(() => {}); }
+  const v = a.querySelector("video"); if (v) { v.preload = "auto"; const pr = v.play(); if (pr && pr.catch) pr.catch(() => { v.classList.add("ld"); WAIT.add(v); }); }
 }
+/* vídeos que o celular não deixou tocar sozinhos começam no primeiro toque na tela */
+const WAIT = new Set();
+["touchstart", "click"].forEach(ev => addEventListener(ev, () => { WAIT.forEach(v => { if (v.isConnected) { const p = v.play(); if (p && p.catch) p.catch(() => {}); } }); WAIT.clear(); }, { passive: true }));
 function pauseArt(a) {
   if (!a) return;
   if (a.classList.contains("embed")) pauseEmbed(a);
@@ -721,7 +727,11 @@ function openLB(a, j) {
     if (Math.abs(d) < 0.5) { strip.scrollLeft = st.tgt; st.raf = 0; upd(); return; }
     strip.scrollLeft += d * 0.16; upd(); st.raf = requestAnimationFrame(anim);
   }
-  function goTo(q) { q = Math.max(0, Math.min(n - 1, q)); st.tgt = Math.min(maxS(), pos(q)); if (RM) { strip.scrollLeft = st.tgt; upd(); } else if (!st.raf) st.raf = requestAnimationFrame(anim); }
+  function goTo(q) {
+    q = Math.max(0, Math.min(n - 1, q)); st.tgt = Math.min(maxS(), pos(q));
+    if (innerWidth <= 760) { cancelAnimationFrame(st.raf); st.raf = 0; strip.style.scrollSnapType = "none"; strip.scrollTo({ left: st.tgt, behavior: RM ? "auto" : "smooth" }); clearTimeout(st.snap); st.snap = setTimeout(() => { strip.style.scrollSnapType = ""; upd(); }, 700); return; }
+    if (RM) { strip.scrollLeft = st.tgt; upd(); } else if (!st.raf) st.raf = requestAnimationFrame(anim);
+  }
   strip.addEventListener("wheel", e => {
     if (innerWidth <= 760) return;
     e.preventDefault();
@@ -781,9 +791,7 @@ function fitArch() {
   if (sec.classList.contains("hm")) {
     /* celular: duas colunas que crescem até encher a altura que sobra */
     const g = 10, Wt = sec.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight), Ha = har.clientHeight; if (!Ha) return;
-    let cw = (Wt - g) / 2;
-    [".hc1", ".hc2"].forEach(c => { const el = har.querySelector(c); if (!el) return; const ars = [...el.querySelectorAll(".fl")].map(arOf); if (!ars.length) return;
-      const inv = ars.reduce((t, a) => t + 1 / a, 0); cw = Math.min(cw, (Ha - (ars.length - 1) * g) / inv); });
+    const cw = (Wt - g) / 2; /* duas colunas iguais, margens iguais dos dois lados */
     har.style.setProperty("--cw", Math.max(60, cw) + "px"); return;
   }
   /* computador: se o mosaico ficar mais alto que a tela, as imagens diminuem na mesma proporção */
@@ -884,12 +892,17 @@ function heroPaging() {
     PG.busy = true; heroGo(n); PG.until = now + 900; setTimeout(() => { PG.busy = false; }, 760);
   }, { passive: false, capture: true });
   /* celular: deslizar de lado na capa troca o projeto; para cima e para baixo rola a página */
-  let x0 = 0, y0 = 0, on = false;
-  addEventListener("touchstart", e => { on = ok() && onCover(e.target); x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  let x0 = 0, y0 = 0, on = false, lockH = null;
+  addEventListener("touchstart", e => { on = ok() && onCover(e.target); lockH = null; x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  addEventListener("touchmove", e => {
+    if (!on) return; const dx = e.touches[0].clientX - x0, dy = e.touches[0].clientY - y0;
+    if (lockH === null && (Math.abs(dx) > 8 || Math.abs(dy) > 8)) lockH = Math.abs(dx) > Math.abs(dy);
+    if (lockH) e.preventDefault(); /* gesto de lado: só troca o projeto, a página fica parada */
+  }, { passive: false });
   addEventListener("touchend", e => {
     if (!on) return; on = false;
     const t0 = e.changedTouches[0], dx = t0.clientX - x0, dy = t0.clientY - y0;
-    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.2) { const n = HERO.i + (dx < 0 ? 1 : -1); if (n >= 0 && n < P.length) heroGo(n); }
+    if (lockH && Math.abs(dx) > 40) { const n = HERO.i + (dx < 0 ? 1 : -1); if (n >= 0 && n < P.length) heroGo(n); }
   }, { passive: true });
 }
 /* depois do último projeto, a página desliza sozinha até o Archive inteiro (e volta) */
