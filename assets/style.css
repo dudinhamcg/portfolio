@@ -551,3 +551,236 @@ main.case{container-type:inline-size;--gw:min(calc(100cqw - 2 * var(--side)),cal
   .harch.hm .fl{width:100%!important;margin:0!important}
   .harch.hm .ahd .type{width:min(58vw,300px)}
 }
+/* ---------- home: carrossel lateral, barra de projetos, espaço até o Archive ---------- */
+.home .hero.v7{height:100svh}
+.home .hero.v7 .hstick{position:relative;top:0;height:100svh}
+.hc.pre-d{transform:translate3d(100%,0,0)}.hc.pre-d>.hci{transform:translate3d(-40%,0,0)}
+.hc.pre-u{transform:translate3d(-100%,0,0)}.hc.pre-u>.hci{transform:translate3d(40%,0,0)}
+.hc.out-u{transform:translate3d(-100%,0,0)}.hc.out-u>.hci{transform:translate3d(40%,0,0)}
+.hc.out-d{transform:translate3d(100%,0,0)}.hc.out-d>.hci{transform:translate3d(-40%,0,0)}
+.v7 .hcover{touch-action:pan-y}
+.v7 .harrs.hbar{display:flex;align-items:center;gap:8px;height:44px}
+.v7 .hbar button{width:9px;height:9px;padding:0;border:0;border-radius:99px;background:rgba(255,255,255,.42);transition:width .55s var(--cut),background .35s;position:relative}
+.v7 .hbar button::after{content:"";position:absolute;inset:-12px -4px}
+.v7 .hbar button:hover{background:rgba(255,255,255,.75)}
+.v7 .hbar button.on{width:34px;background:#fff}
+.home .harch{padding-top:clamp(96px,17vh,210px)!important}
+/* cortina com a cor do projeto */
+.wipe{background:var(--wbg,var(--fg));color:var(--wfg,var(--bg))}
+.wipe .wn{opacity:.7}
+/* rodapé: as linhas da frase sobem uma a uma */
+.foot .cta svg>g{transition:opacity .9s var(--cut)}
+.foot .cta.rv svg>g{opacity:0}
+.foot .cta.rv.in svg>g{opacity:1}
+.foot .cta.rv.in svg>g:nth-child(2){transition-delay:.15s}
+.foot .cta.rv.in svg>g:nth-child(3){transition-delay:.3s}
+.foot .cta{overflow:hidden}
+@media (max-width:760px){
+  .home .harch{padding-top:20px!important}
+  .home .harch.hm{margin-top:clamp(56px,10vh,96px)}
+  .v7 .hbar button{width:8px;height:8px}.v7 .hbar button.on{width:26px}
+}
+.foot .cta{overflow:visible}.foot .cta svg{overflow:visible}
+/* barra com setinhas */
+.v7 .harrs.hbar{gap:14px}
+.v7 .hdots{display:flex;align-items:center;gap:8px}
+.v7 .hdots button{width:9px;height:9px;padding:0;border:0;border-radius:99px;background:rgba(255,255,255,.42);transition:width .55s var(--cut),background .35s;position:relative}
+.v7 .hdots button::after{content:"";position:absolute;inset:-12px -4px}
+.v7 .hdots button:hover{background:rgba(255,255,255,.75)}
+.v7 .hdots button.on{width:34px;background:#fff}
+.v7 .hbar .hba{width:22px!important;height:22px!important;border:0!important;background:none!important;display:grid;place-items:center;color:rgba(255,255,255,.8);padding:0;border-radius:0;transition:color .2s,transform .3s var(--cut)}
+.v7 .hbar .hba:hover{color:#fff}
+.v7 .hbar .hba:first-child:hover{transform:translateX(-3px)}.v7 .hbar .hba:last-child:hover{transform:translateX(3px)}
+.v7 .hbar .hba svg{width:13px;height:13px;display:block}
+/* espaço até o Archive: menor, com o nome saindo devagar ao rolar */
+.home .harch{padding-top:clamp(40px,7vh,96px)!important}
+.home .hero.v7 .hstick{overflow:visible}
+.v7.hv2 .hname,.v7.hv2 .hinfo{will-change:translate,opacity}
+/* rodapé colorido */
+footer.foot{transition:background-color .8s ease}
+footer.foot.colored .fright{border-color:var(--rule)}
+footer.foot.colored a,footer.foot.colored button{color:inherit}
+@media (max-width:760px){.v7 .hdots button{width:8px;height:8px}.v7 .hdots button.on{width:26px}.v7 .harrs.hbar{gap:10px}}
+.home .harch{padding-top:clamp(40px,7vh,96px)!important}
+/* rodapé com a capa desfocada */
+footer.foot{position:relative;overflow:hidden;isolation:isolate}
+footer.foot .fbg{position:absolute;inset:-12%;z-index:-1;background:#2a2a2a center/cover no-repeat;filter:blur(70px) saturate(1.35);transform:scale(1.1);opacity:0;transition:opacity 1.2s ease}
+footer.foot .fbg::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.28)}
+footer.foot.blurred .fbg{opacity:1}
+footer.foot.blurred{background:#2a2a2a}
+footer.foot.blurred a,footer.foot.blurred button{color:inherit}
+footer.foot.blurred .fright{border-color:var(--rule)}
+/* ---------- versões do rodapé ---------- */
+.foot .cta{position:relative}
+.foot .ctafill{display:none}
+/* contorno: a frase começa só no traço e vai preenchendo da esquerda para a direita */
+.foot[class*="fv-contorno"] .cta>.type svg{fill:none;stroke:currentColor;stroke-width:1.2px;vector-effect:non-scaling-stroke}
+.foot[class*="fv-contorno"] .cta>.type svg *{vector-effect:non-scaling-stroke}
+.foot[class*="fv-contorno"] .ctafill{display:block;position:absolute;right:auto;bottom:auto;pointer-events:none;clip-path:inset(-5% calc(100% - var(--fp,0%)) -5% -5%);transition:clip-path .25s linear}
+.foot[class*="fv-contorno"] .ctafill svg{display:block;width:100%;height:auto;overflow:visible}
+/* escuro */
+.foot.fv-escuro,.foot.fv-contorno-escuro{--footbg:#111111;--fg:#F4F4F1;--muted:rgba(244,244,241,.6);--soft:rgba(244,244,241,.6);--line:rgba(244,244,241,.16);--rule:rgba(244,244,241,.32);color:var(--fg)}
+.foot.fv-escuro a,.foot.fv-escuro button,.foot.fv-contorno-escuro a,.foot.fv-contorno-escuro button{color:inherit}
+.foot.fv-escuro .fright,.foot.fv-contorno-escuro .fright{border-color:var(--rule)}
+/* luz no mouse */
+.foot.fv-luz{position:relative;isolation:isolate;overflow:hidden}
+.foot.fv-luz::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle min(38vw,620px) at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--spot,#C9B8A4) 70%,transparent),transparent 70%);transition:opacity .6s}
+/* seletor da prévia */
+#fpick{position:fixed;left:12px;bottom:12px;z-index:80;display:flex;flex-wrap:wrap;gap:4px;align-items:center;background:#fff;border:1px solid #ddd;border-radius:99px;padding:5px 6px 5px 12px;font:12px/1 system-ui,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.12);max-width:calc(100vw - 24px)}
+#fpick span{color:#777;margin-right:4px}
+#fpick button{border:0;background:none;border-radius:99px;padding:6px 10px;cursor:pointer;color:#333;font:inherit}
+#fpick button.on{background:#111;color:#fff}
+/* luz + escuro */
+.foot.fv-luz-escuro{--footbg:#111111;--fg:#F4F4F1;--muted:rgba(244,244,241,.62);--soft:rgba(244,244,241,.62);--line:rgba(244,244,241,.16);--rule:rgba(244,244,241,.32);color:var(--fg);position:relative;isolation:isolate;overflow:hidden}
+.foot.fv-luz-escuro a,.foot.fv-luz-escuro button{color:inherit}
+.foot.fv-luz-escuro .fright{border-color:var(--rule)}
+.foot.fv-luz-escuro::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle min(36vw,580px) at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--spot,#C9B8A4) 55%,transparent),transparent 72%)}
+/* luz mais espalhada e mais transparente */
+.foot.fv-luz-escuro::before{background:radial-gradient(circle min(62vw,1000px) at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--spot,#C9B8A4) 26%,transparent),color-mix(in srgb,var(--spot,#C9B8A4) 10%,transparent) 40%,transparent 78%)}
+/* ---------- fluidez ---------- */
+/* cortina mais rápida nas páginas comuns */
+.wipe.fast{transition:transform .56s var(--cut)}
+.wipe.fast.out{transition:transform .7s var(--cut)}
+.wipe.fast b{font-size:clamp(22px,2.6vw,40px)}
+/* imagens entram com fade quando chegam (o fundo neutro do quadro segura o lugar) */
+.art>img.im,.art>video.im{opacity:0;transition:opacity .7s ease}
+.art>img.im.ld,.art>video.im.ld{opacity:1}
+/* troca de idioma */
+#app.fading>main,#app.fading>footer{opacity:0;transition:opacity .2s ease}
+#app>main,#app>footer{transition:opacity .35s ease}
+/* menu do celular */
+#mnav{clip-path:inset(0 0 100% 0);transition:clip-path .48s var(--cut)}
+#mnav.open{clip-path:inset(0 0 0 0)}
+#mnav .mlinks button,#mnav .mbot>*{opacity:0;translate:0 18px;transition:opacity .4s,translate .6s var(--cut)}
+#mnav.open .mlinks button,#mnav.open .mbot>*{opacity:1;translate:none}
+#mnav.open .mlinks button:nth-child(1){transition-delay:.12s}#mnav.open .mlinks button:nth-child(2){transition-delay:.17s}#mnav.open .mlinks button:nth-child(3){transition-delay:.22s}
+#mnav.open .mbot>*{transition-delay:.3s}
+/* filtros do Archive */
+.arch .mosaic{transition:opacity .22s ease,translate .5s var(--cut)}
+.arch .mosaic.out{opacity:0;translate:0 10px}
+.arch .mosaic.pre{opacity:0;translate:0 14px;transition:none}
+/* títulos sobem de trás de uma máscara */
+.mk{display:block;overflow:hidden;padding-bottom:.04em}
+.mk>*{display:block;transform:translateY(105%);transition:transform 1.1s var(--cut)}
+.in .mk>*,.mk.in>*,.hname.in .mk>*{transform:none}
+.ahd .mk{display:inline-block}
+.ctitle .mk>span,.ahead h1 .mk>span{display:inline-block}
+/* próximo projeto: prévia da capa */
+.nextp{position:relative}
+.nextp .npv{position:absolute;right:clamp(60px,8vw,120px);bottom:calc(100% - 10px);width:clamp(160px,16vw,260px);aspect-ratio:16/10;overflow:hidden;background:var(--tile);opacity:0;transform:translateY(12px) scale(.96);transition:opacity .35s,transform .6s var(--cut);pointer-events:none;z-index:4}
+.nextp .npv img{width:100%;height:100%;object-fit:cover;display:block}
+.nextp:hover .npv{opacity:1;transform:none}
+@media (hover:none){.nextp .npv{display:none}}
+/* bolinhas da home mostram o nome do projeto */
+.v7 .hdots button::before{content:attr(aria-label);position:absolute;bottom:calc(100% + 12px);left:50%;translate:-50% 4px;white-space:nowrap;font-size:12px;letter-spacing:0;color:#fff;background:rgba(17,17,17,.72);padding:5px 9px;border-radius:99px;opacity:0;pointer-events:none;transition:opacity .2s,translate .3s var(--cut)}
+.v7 .hdots button:hover::before{opacity:1;translate:-50% 0}
+@media (hover:none){.v7 .hdots button::before{display:none}}
+/* cabeçalho some ao descer nas páginas longas */
+header.top{transition:border-color .3s,transform .45s var(--cut),background .3s}
+header.top.hide{transform:translateY(-100%)}
+@media (prefers-reduced-motion:reduce){.mk>*{transform:none!important}.art>img.im,.art>video.im{opacity:1}#mnav{clip-path:none}}
+.mk{padding-bottom:.14em;margin-bottom:-.14em}
+/* sem barra lateral no Windows: a home usa a largura útil, não a da janela */
+.v7 .hstage{width:100%}
+.home .hero.v7 .hstick{overflow:hidden}
+html,body{overflow-x:clip}
+/* o gesto de dois dedos para o lado não empurra a página (o "voltar" do Chrome no trackpad) */
+html,body{overscroll-behavior-x:none}
+/* menu do topo na home: fica alinhado à esquerda pelo próprio layout (sem cálculo que podia errar ao voltar para o topo) */
+header.intro:not(.scrolled) .nav{transform:none!important;grid-column:1;grid-row:1;justify-self:start}
+header.top .id,header.top .nav{grid-row:1}
+/* ---------- rodapé: revelar e desfocar (frase gigante, fundo escuro, efeito embaixo do mouse) ---------- */
+.foot.fv-revelar,.foot.fv-desfoque{--footbg:#111111;--fg:#F4F4F1;--muted:rgba(244,244,241,.6);--soft:rgba(244,244,241,.6);--line:rgba(244,244,241,.16);--rule:rgba(244,244,241,.32);color:var(--fg)}
+.foot.fv-revelar a,.foot.fv-revelar button,.foot.fv-desfoque a,.foot.fv-desfoque button{color:inherit}
+.foot.fv-revelar .fright,.foot.fv-desfoque .fright{border-color:var(--rule)}
+.foot.fv-revelar .ctafill,.foot.fv-desfoque .ctafill{display:block;position:absolute;right:auto;bottom:auto;pointer-events:none}
+.foot.fv-revelar .ctafill svg,.foot.fv-desfoque .ctafill svg{display:block;width:100%;height:auto;overflow:visible}
+/* revelar: a frase fica quase apagada e a luz do mouse acende as letras */
+.foot.fv-revelar .cta>.type{color:rgba(244,244,241,.09)}
+.foot.fv-revelar .ctafill{color:#F4F4F1;-webkit-mask-image:radial-gradient(circle 240px at var(--cx,-999px) var(--cy,-999px),#000 0,rgba(0,0,0,.55) 45%,transparent 100%);mask-image:radial-gradient(circle 240px at var(--cx,-999px) var(--cy,-999px),#000 0,rgba(0,0,0,.55) 45%,transparent 100%);opacity:0;transition:opacity .5s}
+.foot.fv-revelar .cta.hov .ctafill{opacity:1}
+/* desfocar: a frase é nítida e embaixo do mouse ela se desfaz */
+.foot.fv-desfoque .cta>.type{-webkit-mask-image:radial-gradient(circle 200px at var(--cx,-999px) var(--cy,-999px),transparent 0,transparent 35%,#000 100%);mask-image:radial-gradient(circle 200px at var(--cx,-999px) var(--cy,-999px),transparent 0,transparent 35%,#000 100%)}
+.foot.fv-desfoque .ctafill{color:#F4F4F1;filter:blur(16px);-webkit-mask-image:radial-gradient(circle 230px at var(--cx,-999px) var(--cy,-999px),#000 0,#000 40%,transparent 100%);mask-image:radial-gradient(circle 230px at var(--cx,-999px) var(--cy,-999px),#000 0,#000 40%,transparent 100%)}
+/* sem mouse (celular): a frase aparece normal */
+@media (hover:none){.foot.fv-revelar .cta>.type{color:#F4F4F1}.foot.fv-revelar .ctafill,.foot.fv-desfoque .ctafill{display:none}.foot.fv-desfoque .cta>.type{-webkit-mask-image:none;mask-image:none}}
+/* desfocar (refeito): um círculo de desfoque segue o mouse por cima da frase */
+.foot.fv-desfoque .cta>.type{-webkit-mask-image:none;mask-image:none}
+.foot.fv-desfoque .ctafill{display:none!important}
+.foot.fv-desfoque .cta::after{content:"";position:absolute;left:var(--cx,-999px);top:var(--cy,-999px);width:380px;height:380px;translate:-50% -50%;border-radius:50%;pointer-events:none;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);-webkit-mask-image:radial-gradient(circle,#000 0,#000 32%,transparent 70%);mask-image:radial-gradient(circle,#000 0,#000 32%,transparent 70%);opacity:0;transition:opacity .5s}
+.foot.fv-desfoque .cta.hov::after{opacity:1}
+@media (hover:none){.foot.fv-desfoque .cta::after{display:none}}
+/* revelar = verniz localizado: letras quase pretas no preto, o mouse faz um brilho discreto */
+.foot.fv-revelar{--footbg:#0A0A0A}
+.foot.fv-revelar .cta>.type{color:#151515}
+.foot.fv-revelar .ctafill{color:#4A4A4A;-webkit-mask-image:radial-gradient(circle 190px at var(--cx,-999px) var(--cy,-999px),#000 0,rgba(0,0,0,.6) 30%,rgba(0,0,0,.18) 62%,transparent 100%);mask-image:radial-gradient(circle 190px at var(--cx,-999px) var(--cy,-999px),#000 0,rgba(0,0,0,.6) 30%,rgba(0,0,0,.18) 62%,transparent 100%)}
+.foot.fv-revelar .ctafill svg{filter:drop-shadow(0 -1px 0 rgba(255,255,255,.06))}
+@media (hover:none){.foot.fv-revelar .cta>.type{color:#2A2A2A}}
+/* celular: o verniz aparece com o brilho passeando sozinho */
+@media (hover:none){.foot.fv-revelar .cta>.type{color:#1C1C1C}.foot.fv-revelar .ctafill{display:block!important;color:#5A5A5A;opacity:1}}
+/* ---------- rodapé revelado por baixo (só no computador) ---------- */
+@media (min-width:761px){
+  #app>main{position:relative;z-index:2;background:var(--bg)}
+  #app>footer.foot{position:sticky;bottom:0;z-index:1;height:calc(100svh - var(--hdr));min-height:0}
+  #app>footer.foot::after{content:"";position:absolute;inset:0;background:#000;opacity:var(--dim,0);pointer-events:none;z-index:6}
+}
+@media (min-width:761px){#app>footer.foot{height:auto;min-height:calc(100svh - var(--hdr))}}
+/* ---------- rodapé "revelado por baixo": escuro, informações em cima e a frase gigante numa linha embaixo ---------- */
+.foot.fv-revelado{--footbg:#111111;--fg:#F4F4F1;--muted:rgba(244,244,241,.6);--soft:rgba(244,244,241,.6);--line:rgba(244,244,241,.16);--rule:rgba(244,244,241,.28);color:var(--fg);display:flex!important;flex-direction:column;justify-content:space-between}
+.foot.fv-revelado a,.foot.fv-revelado button{color:inherit}
+.foot.fv-revelado .fright{order:-1;border-left:0!important;border-top:0!important;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,2fr) minmax(0,1fr);border-bottom:1px solid var(--rule)}
+.foot.fv-revelado .fright>.frow{border-color:var(--rule)}
+.foot.fv-revelado .fright>.fmail,.foot.fv-revelado .fright>.fcols{border-right:1px solid var(--rule)}
+.foot.fv-revelado .fright>.base{grid-column:1/-1;border-top:1px solid var(--rule)}
+.foot.fv-revelado .cta{padding:clamp(24px,4vh,56px) var(--gut) clamp(18px,3vh,36px)}
+.foot.fv-revelado .cta>.type{width:100%!important;display:block;color:#F4F4F1}
+.foot.fv-revelado .cta>.type svg{width:100%;height:auto;display:block}
+.foot.fv-revelado .ctafill{display:none}
+@media (max-width:760px){.foot.fv-revelado .fright{grid-template-columns:1fr}.foot.fv-revelado .fright>.fmail,.foot.fv-revelado .fright>.fcols{border-right:0}}
+.foot.fv-revelado .fright{grid-template-columns:minmax(0,1.7fr) minmax(0,2fr) minmax(0,1fr)}
+.foot.fv-revelado .mailrow{flex-wrap:wrap;gap:12px;align-items:center}
+.foot.fv-revelado .mailrow a{white-space:nowrap;font-size:clamp(20px,1.9vw,34px)}
+/* ---------- rodapé revelado (reformulado): frase + e-mail em cima, faixa de informações embaixo ---------- */
+.foot.fv-revelado{display:flex!important;flex-direction:column;justify-content:flex-end;gap:0;padding:clamp(40px,7vh,96px) var(--gut) 0}
+@media (min-width:761px){#app>footer.foot.fv-revelado{min-height:0;height:auto}}
+.fv-revelado .fhead{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:clamp(24px,4vw,72px);padding-bottom:clamp(28px,5vh,64px)}
+.fv-revelado .fhead .cta{padding:0;display:block}
+.fv-revelado .fhead .cta>.type{width:min(100%,calc((100svh - var(--hdr)) * .5 * var(--r)))!important;display:block;color:#F4F4F1}
+.fv-revelado .fhead .cta>.type svg{width:100%;height:auto;display:block}
+.fv-revelado .fmail2{display:flex;flex-direction:column;gap:10px;padding-bottom:.6vw}
+.fv-revelado .fmail2 .mailrow{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.fv-revelado .fmail2 .mailrow a{font-size:clamp(20px,1.7vw,30px);letter-spacing:-.02em;white-space:nowrap}
+.fv-revelado .fmail2 .mailrow button{border:1px solid var(--rule);border-radius:99px;padding:4px 12px;font-size:12px}
+.fv-revelado .finfo{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule)}
+.fv-revelado .finfo>div{display:flex;flex-direction:column;gap:4px;padding:18px 20px 22px 0;font-size:14px;color:var(--muted)}
+.fv-revelado .finfo>div+div{padding-left:20px;border-left:1px solid var(--line)}
+.fv-revelado .finfo .lbl{font-size:12px;font-weight:400;color:var(--muted);margin:0 0 6px}
+.fv-revelado .finfo a{color:var(--fg)}
+.fv-revelado .fl2{display:flex;flex-wrap:wrap;gap:4px 14px}
+.fv-revelado .fbase{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:14px 0 18px;font-size:12px;color:var(--muted)}
+.fv-revelado .fbase button{color:var(--muted)}
+.fv-revelado .fbase button:hover{color:var(--fg)}
+@media (max-width:760px){
+  .fv-revelado .fhead{grid-template-columns:1fr}
+  .fv-revelado .fhead .cta>.type{width:100%!important}
+  .fv-revelado .finfo{grid-template-columns:1fr 1fr}
+  .fv-revelado .finfo>div:nth-child(3){padding-left:0;border-left:0}
+  .fv-revelado .finfo>div:nth-child(n+3){border-top:1px solid var(--line)}
+}
+/* rodapé revelado: tela inteira, frase em três linhas nas duas línguas */
+@media (min-width:761px){#app>footer.foot.fv-revelado{min-height:calc(100svh - var(--hdr));height:auto}}
+.foot.fv-revelado{justify-content:space-between;padding-top:clamp(32px,5vh,72px)}
+.fv-revelado .fhead{flex:1;align-items:end}
+.fv-revelado .fhead .cta>.type{width:min(100%,calc((100svh - var(--hdr) - 300px) * var(--r)))!important}
+@media (max-width:760px){.fv-revelado .fhead .cta>.type{width:88%!important}}
+/* e-mail em destaque no rodapé */
+.fv-revelado .fmail2{gap:14px;padding-bottom:.4vw}
+.fv-revelado .fmail2 .lbl{font-size:13px;color:var(--muted)}
+.fv-revelado .fmail2 .mailrow{gap:16px}
+.fv-revelado .fmail2 .mailrow a{font-size:clamp(26px,2.7vw,48px);letter-spacing:-.03em;line-height:1.05;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;padding-bottom:6px;transition:background-size .5s var(--cut)}
+.fv-revelado .fmail2 .mailrow a:hover{background-size:0 1px;background-position:100% 100%}
+.fv-revelado .fmail2 .mailrow button{background:#F4F4F1;color:#111!important;border:0;padding:8px 16px;font-size:13px;border-radius:99px;transition:transform .3s var(--cut),opacity .2s}
+.fv-revelado .fmail2 .mailrow button:hover{transform:scale(1.05)}
+/* rodapé sem o efeito de revelar por baixo; e-mail sem sublinhado */
+@media (min-width:761px){#app>footer.foot{position:relative}#app>footer.foot::after{display:none}}
+.fv-revelado .fmail2 .mailrow a{background:none;padding-bottom:0}
