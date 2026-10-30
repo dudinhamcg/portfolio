@@ -306,7 +306,6 @@ function autoColor(p) {
 /* versões do rodapé: contorno | contorno-escuro | escuro | luz | cor */
 const FOOTS = [["contorno", "Contorno"], ["contorno-escuro", "Contorno escuro"], ["escuro", "Escuro"], ["luz", "Luz no mouse"], ["luz-escuro", "Luz + escuro"], ["cor", "Cor do projeto"], ["revelar", "Revelar"], ["desfoque", "Desfocar"], ["revelado", "Revelado por baixo"]];
 let FOOTV = "revelado";
-try { if (window.__PREVIEW) FOOTV = localStorage.getItem("mc-foot") || FOOTV; } catch (e) {}
 const FOOT_MODE = "cor";
 function footImg(p) {
   const s = p && (p.homeD || p.cover); if (!s) return null;
@@ -389,7 +388,9 @@ function footer() {
     return h("footer", { class: "foot fv-revelado" },
       h("div", { class: "fhead" },
         h("div", { class: "cta", style: "--r:" + vbRatio(TYPE[K]) }, typeSvg(K, en ? "Let's make something together" : "Vamos criar algo juntos?")),
-        h("div", { class: "fmail2" }, h("h3", { class: "lbl" }, t("contact")), h("div", { class: "mailrow" }, mail, cp))),
+        h("div", { class: "fside" },
+          h("p", { class: "fintro" }, tx(SITE, "intro")),
+          h("div", { class: "fmail2" }, h("h3", { class: "lbl" }, t("contact")), h("div", { class: "mailrow" }, mail, cp)))),
       h("div", { class: "finfo" },
         h("div", {}, h("h3", { class: "lbl" }, t("social")), h("div", { class: "fl2" }, socials().map(s => h("a", { href: s.url, class: "ext", target: "_blank", rel: "noopener" }, s.name, arr())))),
         h("div", {}, h("h3", { class: "lbl" }, t("based")), h("span", {}, tx(SITE, "location")), h("span", { id: "clock" })),
@@ -435,7 +436,7 @@ function home() {
   if (HVAR !== "3") kids.push(h("div", { class: "hinfo" }, h("p", { class: "hdesc" }, tx(SITE, "intro")), h("ul", { class: "hsoc" }, socials().map(s => h("li", {}, h("a", { href: s.url, target: "_blank", rel: "noopener" }, s.name))))));
   const hero = h("section", { class: "hero v7 hv" + HVAR, id: "hero", style: "--n:" + Math.max(1, P.length) },
     h("div", { class: "hstick" }, h("div", { class: "hstage" }, kids)));
-  return h("main", { class: "home" }, hero, archTeaser());
+  return h("main", { class: "home" }, hero, archTeaser(), tickers());
 }
 /* pular para um projeto pela lista: rola até a posição dele */
 function heroTo(n) { const y = HERO.top + HERO.step * n + 2; window.lenis ? window.lenis.scrollTo(y) : window.scrollTo({ top: y, behavior: "smooth" }); }
@@ -531,12 +532,79 @@ function fitCover() { fitV7();
   box.querySelectorAll(".art").forEach(scaleEmbed);
 }
 /* Archive na home: 4 peças sorteadas a cada visita, soltas e sem corte */
+/* faixas entre a home e o Archive: passam de lado, uma para cada direção, e reagem à rolagem.
+   O texto vem do estúdio (Textos gerais > Faixas); vazio = texto padrão. */
+const TK_DEF = {
+  t1_pt: "Identidade visual · Editorial · Ilustração · Tipografia · Packaging", t1_en: "Visual identity · Editorial · Illustration · Typography · Packaging",
+  t2_pt: "Design desde 2018 · Clientes no Brasil e no exterior · Shortlist Prêmio Bornancini 2026 · Pós em Tipografia, Mackenzie",
+  t2_en: "Designing since 2018 · Clients in Brazil and abroad · Shortlist Bornancini Award 2026 · Postgrad in Typography, Mackenzie" };
+function tickers() {
+  const band = (k, cls) => {
+    const txt = (tx(SITE, k === 1 ? "ticker1" : "ticker2") || TK_DEF["t" + k + "_" + S.lang]).split("·").map(x => x.trim()).filter(Boolean);
+    const seq = () => h("span", { class: "tks" }, txt.map(w => [h("span", { class: "tkw" }, w), h("span", { class: "tkd", "aria-hidden": "true" }, "✳")]));
+    return h("div", { class: "tk " + cls, "aria-label": txt.join(", ") }, h("div", { class: "tkt", "aria-hidden": "true" }, seq(), seq(), seq(), seq()));
+  };
+  return h("section", { class: "htk" }, band(1, "tk1"));
+}
+const TK = { x: [0, 0], dir: 1, v: 0, ly: 0 };
+function tickTickers(dt) {
+  const ts = document.querySelectorAll(".htk .tkt"); if (!ts.length) return;
+  const y = scrollY, dy = y - TK.ly; TK.ly = y; if (Math.abs(dy) > .5) TK.dir = dy > 0 ? 1 : -1;
+  TK.v += (Math.min(40, Math.abs(dy)) - TK.v) * .1;
+  const sp = (RM ? 0 : (.6 + TK.v * .35)) * (dt / 16.7) * TK.dir;
+  ts.forEach((t, i) => { const w = t.firstChild.offsetWidth || 1; TK.x[i] = (TK.x[i] + (i ? sp : -sp)) % w; if (TK.x[i] > 0) TK.x[i] -= w; t.style.transform = "translate3d(" + TK.x[i].toFixed(1) + "px,0,0)"; });
+}
+/* archive da home (computador): cinco posições fixas, desenhadas pela Maria.
+   Em cada posição entra a peça cujo formato mais combina com o espaço; nada é cortado. */
+const MSLOTS = [ // left, top, width, height em % do bloco (desenho da Maria)
+  [3.7, 11.4, 24.4, 53.6], [32.3, 5.4, 35.8, 49.2], [71.6, 4, 25.9, 38.4], [49.9, 60, 46.4, 37.6]];
+const isImg = u => u && !embedOf(u) && !isVid(u);
+function mosaicTeaser(goA) {
+  const slots = MSLOTS.map((r, k) => h("div", { class: "ms ms" + k, style: "left:" + r[0] + "%;top:" + r[1] + "%;width:" + r[2] + "%;height:" + r[3] + "%" }));
+  const stage = h("div", { class: "mstage" }, slots,
+    h("div", { class: "ahw" }, h("button", { class: "ahd", "aria-label": t("archGo"), on: { click: goA } }, h("span", { class: "mk" }, typeSvg("archive", "Archive")), circArrow()),
+      h("p", { class: "asub" }, tx(SITE, "archive_intro"))));
+  const sec = h("section", { class: "harch mock wrap" }, stage);
+  const pool = A.filter(a => isImg((a.images || [])[0])).sort(() => Math.random() - .5).slice(0, 14);
+  const ld = a => new Promise(res => { const i = new Image(); let done = false; const ok = () => { if (done) return; done = true; res({ a, ar: i.naturalWidth ? i.naturalWidth / i.naturalHeight : 0 }); };
+    i.onload = ok; i.onerror = ok; setTimeout(ok, 5000); i.src = fixSrc(a.images[0]); });
+  Promise.all(pool.map(ld)).then(list => {
+    list = list.filter(x => x.ar); if (!list.length || !sec.isConnected && !document.body.contains(sec)) return;
+    const used = new Set();
+    /* primeiro os espaços de formato mais extremo, depois os outros */
+    const order = slots.map((el, k) => { const r = MSLOTS[k]; const ar = (r[2] * stage.clientWidth) / (r[3] * stage.clientHeight || 1); return { el, k, ar }; })
+      .sort((x, y) => Math.abs(Math.log(y.ar)) - Math.abs(Math.log(x.ar)));
+    order.forEach(o => {
+      let best = null, bd = 1e9; list.forEach(x => { if (used.has(x)) return; const d = Math.abs(Math.log(x.ar / o.ar)); if (d < bd) { bd = d; best = x; } });
+      if (!best) return; used.add(best);
+      const a = best.a, src = a.images[0];
+      const b = h("button", { class: "fl msf", "data-cur": "1", "aria-label": a.title, on: { click: goA } }, h("img", { src: fixSrc(src), alt: a.title, decoding: "async" }));
+      o.el.append(b); requestAnimationFrame(() => requestAnimationFrame(() => b.classList.add("in")));
+    });
+  });
+  requestAnimationFrame(fitMosaic);
+  return sec;
+}
+/* mosaico: o bloco usa a largura toda, mas cada quadro mantém o formato do desenho (810 x 500).
+   Os quadros da esquerda ficam presos à esquerda e os da direita à direita, então nada estica. */
+function fitMosaic() {
+  const st = document.querySelector(".mstage"); if (!st) return;
+  const W = st.clientWidth, H = st.clientHeight; if (!W || !H) return;
+  const s = Math.min(W / 810, H / 500);
+  st.querySelectorAll(".ms").forEach((el, k) => {
+    const r = MSLOTS[k], w = r[2] / 100 * 810 * s, hh = r[3] / 100 * 500 * s, top = r[1] / 100 * H;
+    const left = k < 2 ? r[0] / 100 * W : (r[0] + r[2]) / 100 * W - w;
+    Object.assign(el.style, { left: left + "px", top: top + "px", width: w + "px", height: hh + "px" });
+  });
+  const aw = st.querySelector(".ahw"); if (aw) { aw.style.width = (.44 * 810 * s) + "px"; aw.style.left = (MSLOTS[0][0] / 100 * W) + "px"; }
+}
 function archTeaser() {
   if (!A.length) return null;
   const pick = A.slice().sort(() => Math.random() - .5).slice(0, 4);
   const goA = () => go("archive");
   const mob = isMob();
   const fl = (a, k) => a ? h("button", { class: "fl f" + k, "data-cur": "1", "data-speed": mob ? 0 : [0.02, -0.015, 0.025, -0.01][k], "aria-label": a.title, on: { click: goA } }, frame("nat", med((a.images || [])[0], a.title))) : null;
+  if (!mob) return mosaicTeaser(goA);
   if (mob) return h("section", { class: "harch hm wrap" },
     h("div", { class: "hal" }, h("div", { class: "ahw" }, h("button", { class: "ahd", "aria-label": t("archGo"), on: { click: goA } }, h("span", { class: "mk" }, typeSvg("archive", "Archive")), circArrow()),
       h("p", { class: "asub" }, tx(SITE, "archive_intro")))),
@@ -579,7 +647,7 @@ function caseP() {
       if (b.type === "frase") return h("div", { class: "blk" + hm }, textCell(b, "quote"));
       return null;
     })),
-    nx && nx !== p ? h("button", { class: "nextp", on: { click: () => openCase(nx), mouseenter: () => preload(nx) } },
+    nx && nx !== p ? h("button", { class: "nextp", on: { click: () => openCase(nx), mouseenter: () => preload(nx), mousemove: e => { const v = e.currentTarget.querySelector(".npv"); if (!v) return; const r = e.currentTarget.getBoundingClientRect(); v.style.left = (e.clientX - r.left) + "px"; v.style.top = (e.clientY - r.top) + "px"; } } },
       h("span", { class: "lbl" }, t("next")), h("span", { class: "nx" }, h("b", {}, nx.name), circArrow()),
       footImg(nx) ? h("span", { class: "npv", "aria-hidden": "true" }, h("img", { src: footImg(nx), alt: "", loading: "lazy" })) : null) : null);
 }
@@ -702,7 +770,7 @@ function setShift() {
 /* archive da home: tudo cabe na altura da tela, em qualquer monitor, sem cortar imagens */
 const arOf = f => { const fr = f && f.querySelector(".frame,.art"); return (fr && (fr._ar || parseFloat(fr.style.getPropertyValue("--ar")))) || 1; };
 function fitArch() {
-  const sec = document.querySelector(".home .harch"); if (!sec) return;
+  const sec = document.querySelector(".home .harch"); if (!sec || sec.classList.contains("mock")) return;
   const hd = document.querySelector("header.top"), hdr = hd ? hd.offsetHeight : 56;
   const cs = getComputedStyle(sec), padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
   const har = sec.querySelector(".har"); if (!har) return;
@@ -731,7 +799,7 @@ function measure() {
     HERO.top += extra; HERO.h -= extra; }
   setShift();
   fitCover(); fitRows();
-  fitAbout(); fitArch();
+  fitAbout(); fitArch(); fitMosaic();
 }
 let lastW = innerWidth;
 addEventListener("resize", () => {
@@ -756,7 +824,6 @@ function preload(p) {
   urls.filter(u => u && !embedOf(u) && !isVid(u)).slice(0, 6).forEach(u => { const i = new Image(); i.decoding = "async"; i.src = fixSrc(u); });
 }
 function render() {
-  footPicker();
   timers.forEach(clearInterval); timers = [];
   unwatchAll();
   document.documentElement.lang = S.lang === "pt" ? "pt-BR" : "en";
@@ -838,10 +905,31 @@ function snapArch(y) {
   if (window.lenis) window.lenis.scrollTo(to, { duration: 1, lock: true, force: true, onComplete: done });
   else { window.scrollTo({ top: to, behavior: "smooth" }); setTimeout(done, 900); }
 }
+/* o MARIA COSTA se desfaz letra por letra conforme a página desce (some antes do Archive chegar) */
+const DORD = [3, 7, 0, 9, 5, 1, 8, 4, 2, 6];
+function dissolveName(y) {
+  const svg = document.querySelector("#hero .hname svg"); if (!svg) return;
+  const ps = svg.querySelectorAll("path"); if (!ps.length) return;
+  if (!svg._prep) {
+    svg._prep = true; const NS = "http://www.w3.org/2000/svg"; const defs = document.createElementNS(NS, "defs");
+    ps.forEach((p, i) => { const f = document.createElementNS(NS, "filter"); f.setAttribute("id", "mcd" + i); f.setAttribute("x", "-50%"); f.setAttribute("y", "-50%"); f.setAttribute("width", "200%"); f.setAttribute("height", "200%");
+      const g = document.createElementNS(NS, "feGaussianBlur"); g.setAttribute("stdDeviation", "0"); f.append(g); defs.append(f); p._blur = g; p.setAttribute("filter", "url(#mcd" + i + ")"); });
+    svg.prepend(defs); svg.style.overflow = "visible";
+  }
+  /* termina exatamente quando o título do Archive começa a entrar na tela: o mais lento possível, sem os dois juntos */
+  const ah = document.querySelector(".home .harch .ahw"), endY = ah ? Math.max(innerHeight * .4, ah.getBoundingClientRect().top + y - innerHeight * .4) : innerHeight;
+  const st0 = endY * .45, pr = Math.max(0, Math.min(1, (y - st0) / Math.max(1, endY - st0))), n = ps.length; /* só começa da metade do caminho em diante */
+  ps.forEach((p, i) => {
+    const st = (DORD[i % 10] / 10) * .55, t = Math.max(0, Math.min(1, (pr - st) / .45)), e = t * t * (3 - 2 * t);
+    p.style.opacity = (1 - e).toFixed(3); p.style.transform = "translateY(" + (-e * 60).toFixed(1) + "px)";
+    if (p._blur) p._blur.setAttribute("stdDeviation", (e * 18).toFixed(2));
+  });
+  const inf = document.querySelector("#hero .hinfo"); if (inf) inf.style.opacity = (1 - Math.min(1, pr * 1.6)).toFixed(3);
+}
 /* ---------- movimento: rolagem suave, cursor, troca do topo, parallax ---------- */
 function motion() {
   heroPaging();
-  if (!RM && window.Lenis) { try { window.lenis = new Lenis({ duration: 1.15, smoothWheel: true }); } catch (e) { window.lenis = null; } }
+  if (!RM && window.Lenis) { try { window.lenis = new Lenis({ lerp: .14, wheelMultiplier: 1.1, touchMultiplier: 1.4, smoothWheel: true }); } catch (e) { window.lenis = null; } }
   const cur = h("div", { id: "cur", "aria-hidden": "true" }, h("span", {}, t("view"))); let cx = -200, cy = -200, tx2 = -200, ty2 = -200, curOn = false;
   if (HOVER && !RM) {
     document.body.append(cur); document.documentElement.classList.add("has-cur");
@@ -856,7 +944,9 @@ function motion() {
   addEventListener("mousemove", e => { const c = document.querySelector("footer.foot.fv-revelar .ctafill, footer.foot.fv-desfoque .cta"); if (!c) return; const r = c.getBoundingClientRect(); fcx = e.clientX - r.left; fcy = e.clientY - r.top; fin = e.clientY > r.top - 300 && e.clientY < r.bottom + 300; if (fkx < -9000) { fkx = fcx; fky = fcy; } });
   addEventListener("mousemove", e => { const f = document.querySelector("footer.foot[class*='fv-luz']"); if (!f) return; const r = f.getBoundingClientRect(); mx = (e.clientX - r.left) / r.width; my = (e.clientY - r.top) / r.height; });
   let sy = -1;
+  let lt = 0;
   function loop(time) {
+    tickTickers(Math.min(50, time - (lt || time)) || 16.7); lt = time;
     if (!HOVER) { const cf = document.querySelector("footer.foot.fv-revelar .ctafill"); if (cf) { const r = cf.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) { const tt = time / 1000;
       /* celular: sem mouse, o brilho passeia sozinho devagar pela frase */
       fcx = r.width * (.5 + .42 * Math.sin(tt * .55)); fcy = r.height * (.5 + .38 * Math.sin(tt * .9 + 1)); fin = true; if (fkx < -9000) { fkx = fcx; fky = fcy; } } } }
@@ -873,7 +963,7 @@ function motion() {
       if (S.page === "index" && HERO.el) {
         const hh = hd ? hd.offsetHeight : 56, cv = HERO.el.querySelector(".hcover");
         scrolled = y > (cv ? cv.offsetHeight : HERO.h) - hh - 2;
-        snapArch(y);
+        if (!RM) { const hi = HERO.el.querySelectorAll(".hc.on .hci"); const k = Math.min(y, innerHeight) * .28; hi.forEach(e => e.style.translate = "0 " + k.toFixed(1) + "px"); }
       } else scrolled = y > 8;
       if (hd && scrolled !== HERO.scrolled) { HERO.scrolled = scrolled; hd.classList.toggle("scrolled", scrolled); }
       if (hd) { const dy = y - (HERO.ly || 0); HERO.ly = y;
