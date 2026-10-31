@@ -502,7 +502,10 @@ function fitV7() {
     ch = mob ? H : H - nh - gap * 1.8;
     put(cover, { left: 0, right: 0, top: 0, height: ch });
     put(q(".hshade"), { left: 0, right: 0, top: ch - 200, height: 200 });
-    put(proj, { left: pad, right: pad + aW + W * .03, top: ch - rowH - gap * .9, height: rowH });
+    /* no celular o nome do projeto ganha uma linha só dele, inteira; "Ver projeto",
+       setas e pontos ficam na linha de baixo */
+    if (mob) put(proj, { left: pad, right: pad, top: ch - rowH * 2 - gap * .9, height: rowH * 2 });
+    else put(proj, { left: pad, right: pad + aW + W * .03, top: ch - rowH - gap * .9, height: rowH });
     put(arrs, { right: pad, top: ch - rowH - gap * .9, height: rowH });
     put(name, { left: pad, top: ch + gap * (mob ? .6 : .9), width: mob ? W - pad * 2 : nw });
     put(info, { right: pad, top: ch + gap * .9 + nh * .2 });
