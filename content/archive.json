@@ -1,17 +1,5 @@
 [
   {
-    "title": "Maute Typography Posters",
-    "category_pt": "Tipografia",
-    "category_en": "Typography",
-    "year": "2026",
-    "images": [
-      "/media/061.jpg",
-      "/media/051.jpg",
-      "/media/081.jpg",
-      "/media/071.jpg"
-    ]
-  },
-  {
     "title": "Experimental Geometric Posters",
     "category_pt": "Posters",
     "category_en": "Posters",
@@ -74,12 +62,37 @@
     ]
   },
   {
+    "title": "Maute Typography Posters",
+    "category_pt": "Tipografia",
+    "category_en": "Typography",
+    "year": "2026",
+    "images": [
+      "/media/061.jpg",
+      "/media/051.jpg",
+      "/media/081.jpg",
+      "/media/071.jpg"
+    ]
+  },
+  {
     "title": "Sun Lettering",
     "category_pt": "Lettering",
     "category_en": "Lettering",
     "year": "2026",
     "images": [
       "/media/02b.jpg"
+    ]
+  },
+  {
+    "title": "Booklet Illustration",
+    "category_pt": "Ilustração",
+    "category_en": "Illustration",
+    "year": "2023",
+    "images": [
+      "/media/01-3.jpg",
+      "/media/02-3.jpg",
+      "/media/03-3.jpg",
+      "/media/05-2-1.jpg",
+      "/media/06-2.jpg"
     ]
   },
   {
@@ -104,11 +117,10 @@
     "category_en": "Illustration",
     "year": "2024",
     "images": [
-      "/media/ilustracaosemtitulo-6.jpg",
+      "/media/ilustracaosemtitulo-4.jpg",
       "/media/ilustracaosemtitulo-1.jpg",
       "/media/ilustracaosemtitulo-2.jpg",
       "/media/ilustracaosemtitulo-3.jpg",
-      "/media/ilustracaosemtitulo-4.jpg",
       "/media/ilustracaosemtitulo-5.jpg",
       "/media/ilustracaosemtitulo-7.jpg",
       "/media/ilustracaosemtitulo-8.jpg",
@@ -135,6 +147,33 @@
     ]
   },
   {
+    "title": "Blink Design",
+    "category_pt": "Identidade Visual",
+    "category_en": "Brand Identity",
+    "categories": [
+      {
+        "name_pt": "Ilustração",
+        "name_en": "Illustration"
+      }
+    ],
+    "year": "2025",
+    "images": [
+      "/media/fundotela1.mp4",
+      "/media/1-realistic-tote-bag-mockups-2024dekgrafis.jpg",
+      "/media/posterframemockup1.jpg",
+      "/media/78c86454-582e-4ba5-9694-0af4a633a145.jpg"
+    ]
+  },
+  {
+    "title": "Pincel",
+    "category_pt": "Ilustração",
+    "category_en": "Illustration",
+    "year": "2026",
+    "images": [
+      "/media/artefundo.jpg"
+    ]
+  },
+  {
     "title": "Book Illustration",
     "category_pt": "Ilustração",
     "category_en": "Illustration",
@@ -157,6 +196,16 @@
     ]
   },
   {
+    "title": "VPE Construções",
+    "category_pt": "Identidade Visual",
+    "category_en": "Brand Identity",
+    "year": "2025",
+    "images": [
+      "/media/097b7999-92e4-4ff2-bab5-c5ffee379ebd-1.jpg",
+      "/media/construcao-1.jpg"
+    ]
+  },
+  {
     "title": "Academic flyer illustration",
     "category_pt": "Ilustração",
     "category_en": "Illustration",
@@ -169,33 +218,15 @@
     ]
   },
   {
-    "title": "Scanner Experiment #2",
-    "category_pt": "Textura",
-    "category_en": "Texture",
+    "title": "Payment - Test",
+    "category_pt": "Identidade Visual",
+    "category_en": "Brand Identity",
     "year": "2026",
     "images": [
-      "/media/imag0025.jpg",
-      "/media/imag0026.jpg",
-      "/media/imag0027.jpg",
-      "/media/imag0028.jpg",
-      "/media/imag0029.jpg",
-      "/media/imag0030.jpg",
-      "/media/imag0031.jpg",
-      "/media/imag0031-1.jpg",
-      "/media/imag0032.jpg"
-    ]
-  },
-  {
-    "title": "Booklet Illustration",
-    "category_pt": "Ilustração",
-    "category_en": "Illustration",
-    "year": "2023",
-    "images": [
-      "/media/01-3.jpg",
-      "/media/02-3.jpg",
-      "/media/03-3.jpg",
-      "/media/05-2-1.jpg",
-      "/media/06-2.jpg"
+      "/media/06-1-1.jpg",
+      "/media/04-6.jpg",
+      "/media/07-6.jpg",
+      "/media/02-2-1.jpg"
     ]
   },
   {
@@ -217,12 +248,86 @@
     ]
   },
   {
-    "title": "Poster illustratio",
-    "category_pt": "Poster",
-    "category_en": "Poster",
+    "title": "Scanner Experiment #2",
+    "category_pt": "Textura",
+    "category_en": "Texture",
+    "year": "2026",
+    "images": [
+      "/media/imag0025.jpg",
+      "/media/imag0026.jpg",
+      "/media/imag0027.jpg",
+      "/media/imag0028.jpg",
+      "/media/imag0029.jpg",
+      "/media/imag0030.jpg",
+      "/media/imag0031.jpg",
+      "/media/imag0031-1.jpg",
+      "/media/imag0032.jpg"
+    ]
+  },
+  {
+    "title": "Lok Auto",
+    "category_pt": "Identidade Visual",
+    "category_en": "Brand Identity",
+    "year": "2024",
+    "images": [
+      "/media/01-1-1-1.jpg"
+    ]
+  },
+  {
+    "title": "Starbucks - Acadêmico",
+    "category_pt": "Motion",
+    "category_en": "Motion",
+    "year": "2025",
+    "images": [
+      "/media/promocional-mariaeduardacosta.mp4"
+    ]
+  },
+  {
+    "title": "Sindloc-MG Revista",
+    "category_pt": "Design Editorial",
+    "category_en": "Editorial Design",
+    "year": "2022-2025",
+    "images": [
+      "/media/03-free-magazine-mockup-kit.jpg",
+      "/media/01-2-1-1.jpg",
+      "/media/01-5-1.jpg",
+      "/media/01-6-1.jpg",
+      "/media/01-4-1.jpg",
+      "/media/01-3-1.jpg"
+    ]
+  },
+  {
+    "title": "Vila di Montagne",
+    "category_pt": "Identidade Visual",
+    "category_en": "Brand Identity",
+    "year": "2025",
+    "images": [
+      "/media/03-4.jpg",
+      "/media/prancheta-1-1.png",
+      "/media/papelaria.jpg",
+      "/media/redes.jpg"
+    ]
+  },
+  {
+    "title": "Velas Lux",
+    "category_pt": "Produto",
+    "category_en": "Product",
+    "categories": [
+      {
+        "name_pt": "Identidade Visual",
+        "name_en": "Brand Identity"
+      },
+      {
+        "name_pt": "Ilustração",
+        "name_en": "Illustration"
+      }
+    ],
     "year": "2022",
     "images": [
-      "/media/poster-exposicao.jpg"
+      "/media/mockupfavo.jpg",
+      "/media/mockupteen.jpg",
+      "/media/mockupsao.jpg",
+      "/media/mockupvisc.jpg"
     ]
   },
   {
@@ -242,6 +347,107 @@
       "/media/dsc05239.jpg",
       "/media/dsc05240.jpg",
       "/media/dsc05241.jpg"
+    ]
+  },
+  {
+    "title": "Narcise",
+    "category_pt": "Identidade Visual",
+    "category_en": "Brand Identity",
+    "year": "2023",
+    "images": [
+      "/media/mockup10-2.jpg",
+      "/media/mockup3.jpg",
+      "/media/mockup10-2-1.jpg",
+      "/media/mockup4.jpg",
+      "/media/mockup9.jpg"
+    ]
+  },
+  {
+    "title": "Estampas - BTS",
+    "category_pt": "Ilustração",
+    "category_en": "Illustration",
+    "year": "2022",
+    "images": [
+      "/media/prancheta-2-100.jpg",
+      "/media/prancheta-5-100.jpg",
+      "/media/prancheta-6-100.jpg"
+    ]
+  },
+  {
+    "title": "Café com Lua - Acadêmico",
+    "category_pt": "Ilustração",
+    "category_en": "Illustration",
+    "year": "2021",
+    "images": [
+      "/media/prancheta-4trab2.png",
+      "/media/prancheta-3trab2.png"
+    ]
+  },
+  {
+    "title": "Poster illustration",
+    "category_pt": "Poster",
+    "category_en": "Poster",
+    "year": "2022",
+    "images": [
+      "/media/poster-exposicao.jpg"
+    ]
+  },
+  {
+    "title": "CRF Consultores",
+    "category_pt": "Identidade Visual",
+    "category_en": "Brand Identity",
+    "year": "2025",
+    "images": [
+      "/media/crf-faustino.mp4",
+      "/media/m4.jpg",
+      "/media/m2.jpg",
+      "/media/m1.jpg"
+    ]
+  },
+  {
+    "title": "Estúdio 47",
+    "category_pt": "Identidade Visual",
+    "category_en": "Brand Identity",
+    "year": "2026",
+    "images": [
+      "/media/22-1.mp4",
+      "/media/17-1.jpg"
+    ]
+  },
+  {
+    "title": "Fleche D'or",
+    "category_pt": "Identidade Visual",
+    "category_en": "Brand Identity",
+    "year": "2025",
+    "images": [
+      "/media/fundo-motion.gif",
+      "/media/02-1-1.jpg",
+      "/media/05-4.jpg",
+      "/media/01-1-1.jpg",
+      "/media/06-3.jpg"
+    ]
+  },
+  {
+    "title": "Vinho - Acadêmico",
+    "category_pt": "Embalagem",
+    "category_en": "Packaging",
+    "categories": [
+      {
+        "name_pt": "IA",
+        "name_en": "AI"
+      },
+      {
+        "name_pt": "3D",
+        "name_en": "3D"
+      }
+    ],
+    "year": "2025",
+    "images": [
+      "/media/03-1-1.jpg",
+      "/media/02-3-1.jpg",
+      "/media/01-2-2.jpg",
+      "/media/05-2-2.jpg",
+      "/media/04-1-1.jpg"
     ]
   }
 ]
