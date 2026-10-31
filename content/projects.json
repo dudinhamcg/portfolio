@@ -146,7 +146,7 @@
     "client": "Bastô Massas",
     "scope_pt": "Identidade Visual, Ilustração",
     "scope_en": "Brand Identity, Illustration",
-    "credits": "Identidade Visual e Ilustrações: Maria Costa | Idealização e moodboard: Maria Eduarda, Nalu | Projeto desenvolvido dentro da Agência Ouriço.",
+    "credits": "Identidade Visual e Ilustrações: Maria Costa\nIdealização e moodboard: Maria Eduarda, Nalu \nProjeto desenvolvido dentro da Agência Ouriço.",
     "cover": "/media/03-2.jpg",
     "color": "#d35100",
     "home_cover": "/media/basto-cortes-logo-2mb.mp4",
@@ -366,7 +366,7 @@
     "scope_pt": "Ilustração",
     "scope_en": "Illustration",
     "credits": "Maria Costa",
-    "cover": "/media/capa-livromockup.png",
+    "cover": "/media/05-2.png",
     "color": "#130c27",
     "home_cover": "/media/livros-torre-horizontal-v2.mp4",
     "home_mobile": "/media/livros-torre-vertical-v2.mp4",
@@ -380,26 +380,43 @@
     "gallery": [
       {
         "type": "dupla",
-        "left": "/media/capa-livro-1.png",
-        "right": "/media/capa-livro-2.png",
+        "left": "/media/03-3.png",
+        "right": "/media/08-4.png",
         "hide_mobile": false
       },
       {
         "type": "inteira",
-        "media": "/media/04-5.jpg",
-        "video_url": "https://youtu.be/ZctAHik8j1k?si=RMnQ9jTHWys1bQr9",
+        "media": "/media/10-3.png",
         "natural": false,
         "hide_mobile": false
       },
       {
         "type": "dupla",
-        "left": "/media/1-1.png",
-        "right": "/media/2.png",
+        "left": "/media/02-6.png",
+        "right": "/media/09-2.png",
         "hide_mobile": false
       },
       {
         "type": "inteira",
-        "media": "/media/capa-livro.jpg",
+        "media": "/media/capa.mp4",
+        "natural": true,
+        "hide_mobile": false
+      },
+      {
+        "type": "dupla",
+        "left": "/media/07-5.png",
+        "right": "/media/06-3.png",
+        "hide_mobile": false
+      },
+      {
+        "type": "inteira",
+        "media": "/media/10-4.png",
+        "natural": false,
+        "hide_mobile": false
+      },
+      {
+        "type": "inteira",
+        "media": "/media/capa-livro-1.jpg",
         "natural": true,
         "hide_mobile": false
       }
