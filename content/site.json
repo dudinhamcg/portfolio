@@ -82,6 +82,20 @@
         "role_en": "Eu Detetive: Desconectar para Investigar",
         "period": "2026"
       }
+    ],
+    "languages": [
+      {
+        "name_pt": "Inglês",
+        "name_en": "English",
+        "level_pt": "Avançado",
+        "level_en": "Advanced"
+      },
+      {
+        "name_pt": "Espanhol",
+        "name_en": "Spanish",
+        "level_pt": "Iniciante",
+        "level_en": "Begginer"
+      }
     ]
   }
 }
