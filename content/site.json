@@ -3,8 +3,8 @@
   "email": "hello@mariacostag.com",
   "role_pt": "Designer",
   "role_en": "Graphic Designer",
-  "intro_pt": "Designer gráfica que ama branding, design editorial, ilustração e embalagem.",
-  "intro_en": "Graphic designer that loves branding, editorial design, illustration and packaging",
+  "intro_pt": "Designer gráfica que ama branding, design editorial, ilustração e tipografia.",
+  "intro_en": "Graphic designer that loves branding, editorial design, illustration and typography.",
   "socials": [
     {
       "name": "Instagram",
@@ -31,10 +31,10 @@
   "archive_intro_en": "One-off pieces, studies and experiments.",
   "about": {
     "photo": "/media/portfoliocolorido.jpg",
-    "statement_pt": "Designer gráfica que cria identidades visuais, projetos editoriais, ilustrações e embalagens.",
-    "statement_en": "Graphic designer creating visual identities, editorial projects, illustrations and packaging.",
-    "bio_pt": "Amo criar e experimentar, testando caminhos novos até chegar em algo que me encante. Estou sempre praticando trabalhos manuais e explorando projetos impressos.\n\nSou formada em Design pela FUMEC e estou cursando a pós-graduação em Tipografia e Design de Tipos no Mackenzie. Trabalho com design desde 2018, com clientes no Brasil e no exterior, em português e inglês.",
-    "bio_en": "I love creating and experimenting, trying new paths until I find something that excites me. I’m always practicing handmade work and exploring print projects.\n\nI hold a degree in Design from FUMEC and I’m pursuing a postgraduate degree in Typography and Type Design at Mackenzie. I’ve been working in design since 2018, with clients in Brazil and abroad, in Portuguese and English.",
+    "statement_pt": "Designer gráfica que cria identidades visuais, projetos editoriais, ilustrações e tipografia.",
+    "statement_en": "Graphic designer creating visual identities, editorial projects, illustrations and typography.",
+    "bio_pt": "Gosto de conhecer a história por trás de cada projeto. É dela que nascem as ideias: experimento, testo caminhos novos e vou ajustando até chegar na solução que faz sentido para o desafio. Estou sempre praticando trabalhos manuais e explorando projetos impressos.\n\nMe formei em Design pela FUMEC e hoje faço pós em Tipografia e Design de Tipos no Mackenzie, onde ando mergulhada no universo das tipografias. Desde 2018 crio para clientes no Brasil e lá fora.",
+    "bio_en": "I love getting to know the story behind each project. That’s where the ideas come from: I experiment, try new paths and keep refining until I find the solution that makes sense for the challenge. I’m always practicing handcrafts and exploring print projects.\n\nI graduated in Design from FUMEC and I’m now doing a postgraduate program in Typography and Type Design at Mackenzie, where I’ve been diving deep into the world of type. Since 2018, I’ve been creating for clients in Brazil and abroad.",
     "experience": [
       {
         "name": "Designer Freelancer",
