@@ -759,7 +759,9 @@ function info() {
   const ab = SITE.about || {};
   const list = rows => h("ul", {}, (rows || []).map(x => h("li", {}, h("b", {}, x.name), tx(x, "role") ? h("span", {}, tx(x, "role")) : null, x.period ? h("span", {}, period(x.period)) : null)));
   const bio = tx(ab, "bio").split(/\n\s*\n/).map(s => s.trim()).filter(Boolean);
-  const cols = [["exp", ab.experience], ["edu", ab.education], ["rec", ab.recognition]].filter(([, v]) => v && v.length);
+  /* idiomas: nome e nível em português e inglês */
+  const langs = (ab.languages || []).map(x => ({ name: tx(x, "name"), role_pt: x.level_pt, role_en: x.level_en })).filter(x => x.name);
+  const cols = [["exp", ab.experience], ["edu", ab.education], ["rec", ab.recognition], ["langs", langs]].filter(([, v]) => v && v.length);
   return h("main", {}, h("section", { class: "about wrap" },
     h("div", { class: "phw" }, ab.photo ? frame("ph nat", (() => { const a = med(ab.photo, SITE.name, { eager: true }); a._onar = fitAbout; return a; })()) : frame("ph", h("span", {}, t("photo")))),
     h("div", { class: "txt" },
