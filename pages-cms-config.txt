@@ -369,3 +369,13 @@ content:
               - { name: role_pt, label: Detalhe (português), type: string }
               - { name: role_en, label: Detalhe (inglês), type: string }
               - { name: period, label: Ano, type: string }
+          - name: languages
+            label: Idiomas
+            description: "Cada idioma com o nível em português e em inglês. Ex.: Inglês / English, Avançado / Advanced."
+            type: object
+            list: true
+            fields:
+              - { name: name_pt, label: Idioma (português), type: string }
+              - { name: name_en, label: Idioma (inglês), type: string }
+              - { name: level_pt, label: Nível (português), type: string }
+              - { name: level_en, label: Nível (inglês), type: string }
