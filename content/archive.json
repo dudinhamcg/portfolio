@@ -62,15 +62,18 @@
     ]
   },
   {
-    "title": "Maute Typography Posters",
-    "category_pt": "Tipografia",
-    "category_en": "Typography",
+    "title": "Poster LADFEST",
+    "category_pt": "Poster",
+    "category_en": "Poster",
+    "categories": [
+      {
+        "name_pt": "Feito a mão",
+        "name_en": "Handcraft"
+      }
+    ],
     "year": "2026",
     "images": [
-      "/media/061.jpg",
-      "/media/051.jpg",
-      "/media/081.jpg",
-      "/media/071.jpg"
+      "/media/poster.jpg"
     ]
   },
   {
@@ -182,21 +185,6 @@
     ]
   },
   {
-    "title": "Poster LADFEST",
-    "category_pt": "Poster",
-    "category_en": "Poster",
-    "categories": [
-      {
-        "name_pt": "Feito a mão",
-        "name_en": "Handcraft"
-      }
-    ],
-    "year": "2026",
-    "images": [
-      "/media/poster.jpg"
-    ]
-  },
-  {
     "title": "Postcard Vicnic",
     "category_pt": "Ilustração",
     "category_en": "Illustration",
@@ -210,6 +198,18 @@
     "images": [
       "/media/tae-frente.jpg",
       "/media/tae-verso.jpg"
+    ]
+  },
+  {
+    "title": "Maute Typography Posters",
+    "category_pt": "Tipografia",
+    "category_en": "Typography",
+    "year": "2026",
+    "images": [
+      "/media/061.jpg",
+      "/media/051.jpg",
+      "/media/081.jpg",
+      "/media/071.jpg"
     ]
   },
   {
