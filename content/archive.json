@@ -83,6 +83,14 @@
     ]
   },
   {
+    "title": "Lenço Ilustrado",
+    "category_pt": "Illustration",
+    "images": [
+      "/media/postfinalinsta.png",
+      "/media/postfinalinsta2.png"
+    ]
+  },
+  {
     "title": "Booklet Illustration",
     "category_pt": "Ilustração",
     "category_en": "Illustration",
@@ -171,6 +179,37 @@
     "year": "2026",
     "images": [
       "/media/artefundo.jpg"
+    ]
+  },
+  {
+    "title": "Poster LADFEST",
+    "category_pt": "Poster",
+    "category_en": "Poster",
+    "categories": [
+      {
+        "name_pt": "Feito a mão",
+        "name_en": "Handcraft"
+      }
+    ],
+    "year": "2026",
+    "images": [
+      "/media/poster.jpg"
+    ]
+  },
+  {
+    "title": "Postcard Vicnic",
+    "category_pt": "Ilustração",
+    "category_en": "Illustration",
+    "categories": [
+      {
+        "name_pt": "Lettering",
+        "name_en": "Lettering"
+      }
+    ],
+    "year": "2026",
+    "images": [
+      "/media/tae-frente.jpg",
+      "/media/tae-verso.jpg"
     ]
   },
   {
@@ -448,14 +487,6 @@
       "/media/01-2-2.jpg",
       "/media/05-2-2.jpg",
       "/media/04-1-1.jpg"
-    ]
-  },
-  {
-    "title": "Lenço Ilustrado",
-    "category_pt": "Illustration",
-    "images": [
-      "/media/postfinalinsta.png",
-      "/media/postfinalinsta2.png"
     ]
   }
 ]
